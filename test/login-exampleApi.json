@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "8165513c-4550-49f8-9e3f-87e8b33de0e8",
+		"name": "JWT Test",
+		"description": "Peticiones URL para probar las funcionalidades de JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login con JWT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"Pipo\",\n\t\"password\": \"Test\",\n\t\"role\": \"guest\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBpcG8iLCJyb2xlIjoiZ3Vlc3QiLCJpYXQiOjE1NzIxMTU3ODUsImV4cCI6MTU3MjExNjk4NX0.Lfd4fORkkAR5zoheH0ewe3Jy3u-WJ73ti_90hAkjYNs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fullname\": \"Pepito Perez\",\n    \"username\": \"pepito244\",\n    \"email\": \"pepito@example.com\",\n    \"password\": \"pepito\",\n    \"role\": \"guest\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikdlb3Zhbm55Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTcxNzE1MTk1LCJleHAiOjE1NzE4MDE1OTV9.__ffKibF2O6ekfOJ8iwLo1zccXGN6IG4PLUxK_OzdVI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ISBN\": \"9788434453630\",\n\t\"name\": \"Las preguntas de la vida\",\n\t\"author\": \"Fernando Savater\",\n\t\"publisher\": \"Ariel\",\n\t\"cost\": \"$70000\",\n\t\"providerCost\": \"$50000\",\n\t\"existences\": \"15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/addBook",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"addBook"
+					]
+				},
+				"description": "Allows to create a new book if and only if you have admin permissions"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the books registeres in the database",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hcmlhIiwicm9sZSI6ImxpYnJhcmlhbiIsImlhdCI6MTU3MTcxNTU4MCwiZXhwIjoxNTcxODAxOTgwfQ.Nx58QtKmWTl3gQqbHABY6ChOwJ8Jhp4ULja0_g3vDfw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/getBooks",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"getBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a book using its ISBN",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBpcG8iLCJyb2xlIjoiZ3Vlc3QiLCJpYXQiOjE1NzE3NjgyMTEsImV4cCI6MTU3MTg1NDYxMX0.rbG4lQb5KuZQPbWeQzs8xyPt1Xw0kBHPPIZCzxkKakk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"isbn\": \"9789583000744\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/getISBN",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"getISBN"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

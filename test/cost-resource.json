@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "b1a5b8e6-1c38-46ba-acc2-acc799707c10",
+		"name": "Cost Resource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a cost for a user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBpcG8iLCJyb2xlIjoiZ3Vlc3QiLCJpYXQiOjE1NzI3MjkwNTIsImV4cCI6MTU3MjgxNTQ1Mn0.gRctf_OAy_lO1h7QKY3j9HVsBOVw6-zTiTthZ04IlPk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2/11/2019\",\r\n    \"category\": \"clean\",\r\n    \"amount\": 10,\r\n    \"description\": \"Buy a soap\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/cost/addcost",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"cost",
+						"addcost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all cost for an user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBpcG8iLCJyb2xlIjoiZ3Vlc3QiLCJpYXQiOjE1NzI3MjkwNTIsImV4cCI6MTU3MjgxNTQ1Mn0.gRctf_OAy_lO1h7QKY3j9HVsBOVw6-zTiTthZ04IlPk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/cost/getallcost",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"cost",
+						"getallcost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the cost for and user and category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikdlb3Zhbm55Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTcyNzI1ODgwLCJleHAiOjE1NzI4MTIyODB9.gEPj8IhZKTSQd4O2lG4VPdA1W1FRngRTcw9eYXbxfeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\": \"food\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/cost/getcostcategory",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"cost",
+						"getcostcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the cost for an user between a window time",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikdlb3Zhbm55Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTcyNzI1ODgwLCJleHAiOjE1NzI4MTIyODB9.gEPj8IhZKTSQd4O2lG4VPdA1W1FRngRTcw9eYXbxfeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"inicialTime\": \"2019-02-11T05:00:00.000+00:00\",\n\t\"finalTime\": \"2019-10-11T05:00:00.000+00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/cost/getcosttime",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"cost",
+						"getcosttime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the cost for an user, category and between two dates",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikdlb3Zhbm55Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTcyNzI1ODgwLCJleHAiOjE1NzI4MTIyODB9.gEPj8IhZKTSQd4O2lG4VPdA1W1FRngRTcw9eYXbxfeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"inicialTime\": \"2019-02-11T05:00:00.000+00:00\",\n\t\"finalTime\": \"2019-10-11T05:00:00.000+00:00\",\n\t\"category\": \"food\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/cost/getcosttimecategory",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"cost",
+						"getcosttimecategory"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
