@@ -5,7 +5,8 @@ import history from "./history";
 import Login from "./components/login";
 import BookList from "./components/bookList";
 import SignIn from "./components/signin";
-import Board from "./components/Board"
+import Board from "./components/Board";
+import Home from "./components/Home";
 
 export const makeRoutes = () => {
   return (    
@@ -13,6 +14,7 @@ export const makeRoutes = () => {
         <Switch>
           <>
             <Route path="/" render={props => <App {...props} />} />
+            <Route path="/home" render ={props => <Home {...props} />} />
             <Route path="/board" render ={props => <Board {...props} />} />
             <Route path="/login" render={props => <Login {...props} />} />
             <Route path="/getBooks" render={props => <BookList {...props} />} />

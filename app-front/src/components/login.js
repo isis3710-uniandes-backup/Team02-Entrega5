@@ -52,7 +52,7 @@ export default class Login extends Component {
         localStorage.setItem("token", res.token);
         alert("Comprobacion exitosa"); //TODO Cambiar por un toastr.
         history.replace({
-          pathname: "/board",
+          pathname: "/home",
           state: {
             username: this.state.username,
             password: this.state.password
