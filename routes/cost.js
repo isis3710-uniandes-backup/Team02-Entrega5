@@ -4,9 +4,6 @@ var operations = require("../src/cost-ops");
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('Holi');
-});
 
 router.post('/addcost', middleware.checkToken, operations.addCost);
 router.get('/getallcost', middleware.checkToken, operations.getAllCost);
