@@ -35,7 +35,7 @@ class Expenditure extends Component {
     render() {
         return (
             <div>
-                <div className="card shadow">
+                <div className="card shadow expenditure-card">
                     <div className="card-header">
                         <h3>Add Expenditure</h3>
                     </div>
