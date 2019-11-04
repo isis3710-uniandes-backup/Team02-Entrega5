@@ -4,7 +4,7 @@
 
 const MongoClient = require("mongodb").MongoClient;
 const forge = require("node-forge");
-const url = "mongodb+srv://user:testuser@personal-jkqvg.mongodb.net/test?retryWrites=true&w=majority";
+const url = "mongodb://localhost:27017";
 const cliente = new MongoClient(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -49,7 +49,7 @@ const addUser = async req => {
       if (err) reject(err);
       db = cliente.db(database);
       const colleccion = db.collection(mongo_collection); //Nombre del documento donde guardaremos la informacion    let body = {}
-
+      req.body.password = generateDigest(req.body.password); //Pone el hash de la clave.      
       //Atención: Ojo que los nombres de los atributos coincida tanto en el back como en el front
       /**
        * ! Los nombres son:
