@@ -33,7 +33,8 @@ class Dashboard extends Component {
                                         title: 'My expenses',
                                         // Just add this option
                                         is3D: true,
-                                        backgroundColor: { fill: 'transparent' }
+                                        backgroundColor: { fill: 'transparent' },
+                                        chartArea: {'width': '95%', 'height': '85%'},
                                     }}
                                     rootProps={{ 'data-testid': '1' }}
                                 />
