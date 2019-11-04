@@ -25,8 +25,8 @@ class Dashboard extends Component {
                         <div className="row justify-content-center">
                             <div className="col-12">
                                 <Chart
-                                    width={'900px'}
-                                    height={'700px'}
+                                    width={'800px'}
+                                    height={'600px'}
                                     chartType="PieChart"
                                     loader={<div>Loading Chart...</div>}
                                     data={this.props.data}
