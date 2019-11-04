@@ -3,7 +3,7 @@
  */
 
 const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb+srv://user:testuser@personal-jkqvg.mongodb.net/test?retryWrites=true&w=majority";
+const url = "mongodb://localhost:27017";
 const cliente = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 const database = "data";
 const mongo_collection = "cost";
