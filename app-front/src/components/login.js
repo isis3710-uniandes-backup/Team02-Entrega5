@@ -53,10 +53,10 @@ export default class Login extends Component {
         alert("Comprobacion exitosa"); //TODO Cambiar por un toastr.
         history.replace({
           pathname: "/board",
-          state: {user: {
-            "username": this.state.username,
-            "password": this.state.password
-          }}
+          state: {
+            username: this.state.username,
+            password: this.state.password
+          }
         }); //Ir a la ventana principal
       }
     } catch (err) {

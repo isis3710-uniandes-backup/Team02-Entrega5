@@ -5,11 +5,13 @@ import Dashboard from './Dashboard';
 class Board extends Component {
 
     state = {
-        user: this.props.location.user
+        username: this.props.location.state.username,
+        password: this.props.location.state.password,
     }
 
     componentDidMount() {
-        console.log("User: " + this.state.user)
+        console.log("Username: " + this.state.username)
+        console.log("Password: " + this.state.password)
     }
 
     render() {
@@ -17,10 +19,10 @@ class Board extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-4">
-                        <Expenditure />
+                        <Expenditure username={this.state.username} password={this.state.password}/>
                     </div>
                     <div className="col-8">
-                        <Dashboard />
+                        <Dashboard username={this.state.username} password={this.state.password}/>
                     </div>
                 </div>
             </div>

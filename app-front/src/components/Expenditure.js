@@ -1,35 +1,54 @@
 import React, { Component } from 'react';
+import { ToastsContainer, ToastsStore } from 'react-toasts';
+import { data } from "../params";
+import { categories } from "../categories";
+
+const axios = require("axios");
 
 class Expenditure extends Component {
 
     state = {
-        categories: [
-            "Food",
-            "Shopping",
-            "Services",
-            "Laundry",
-            "Phone",
-            "House",
-            "Car",
-            "Technology",
-            "Water",
-            "Energy",
-            "Gas",
-            "Clothing",
-            "Education",
-            "Health care",
-            "Savings",
-            "Transportation",
-            "Insurance",
-            "Entertainment and recreation",
-            "Gasoline and motor fuels",
-            "Travel",
-            "Labor costs"
-        ]
+        categories: categories,
+        
     }
 
     handleSubmit(event) {
+        event.preventDefault();
+        //Se atrapan los valores digitados por el usuario
+        const category = event.target.category.value;
+        const description = event.target.description.value;
+        const date = event.target.date.value;
+        const amount = event.target.amount.value;
 
+        console.log(category);
+        console.log(description);
+        console.log(date);
+        console.log(amount);
+
+        if (category !== '' && description !== '' && date !== '' && amount) {
+            // Ver si agregarle el tiempo a la fecha
+
+
+            axios({
+                method: "POST",
+                url: data.addCost,
+                headers: { authorization: "Bearer " + localStorage.getItem("token") },
+                data: {     
+                    date: date,
+                    category: category,
+                    amount: amount,
+                    description: description
+                }
+            }).then(res => {
+                console.log(res);
+                // Reload componente Dashboard:
+                
+            });
+
+        } else {
+            //alert("Se deben llenar todos los campos");
+            ToastsStore.error("Se deben llenar todos los campos")
+        }
     }
 
     render() {
@@ -41,16 +60,12 @@ class Expenditure extends Component {
                     </div>
                     <div className="card-body">
                         <form id="form-oferta" onSubmit={this.handleSubmit.bind(this)}>
-                            <div class="form-group">
-                                <label for="selectCategory">Category</label>
-                                <select class="form-control" id="selectCategory">
-                                    {this.state.categories.map(value => <option>{value}</option>)}   
-                                
-                                </select>
-                            </div>
                             <div className="form-group">
-                                <label htmlFor="inputCategory">Category </label>
-                                <input type="text" name="category" className="form-control" id="inputCategory" placeholder="Food"></input>
+                                <label htmlFor="selectCategory">Category</label>
+                                <select className="form-control" id="selectCategory" name="category">
+                                    {this.state.categories.map(value => <option>{value}</option>)}
+
+                                </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="inputDescription">Description </label>
@@ -78,7 +93,7 @@ class Expenditure extends Component {
                         </form>
                     </div>
                 </div>
-
+                <ToastsContainer store={ToastsStore} />
             </div>
         );
     }

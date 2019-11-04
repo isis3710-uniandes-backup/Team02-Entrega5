@@ -17,6 +17,7 @@
     "morgan": "~1.9.1",
     "node-forge": "^0.9.1",
     "pug": "^2.0.4",
-    "react-google-charts": "^3.0.15"
+    "react-google-charts": "^3.0.15",
+    "react-toasts": "^3.0.6"
   }
 }
