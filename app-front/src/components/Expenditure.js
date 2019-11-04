@@ -42,7 +42,7 @@ class Expenditure extends Component {
             }).then(res => {
                 console.log(res);
                 // Reload componente Dashboard:
-                
+                this.props.refreshData();
             });
 
         } else {
