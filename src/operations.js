@@ -40,12 +40,13 @@ const getAllBooks = (req, res) => {
         "Access Denied. You don´t have the correct permissions to perform this action."
     });
   }
-
+  else {
   //Uso del formato de promesa.
   mongo
     .getAllBooks()
     .then(books => res.send(books))
     .catch(err => res.status(500).send(err));
+  }
 };
 
 //Permite a un usuario obtener la información de un libro de acuerdo a sus permisos.

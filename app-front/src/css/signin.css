@@ -35,3 +35,11 @@
     color: white;
     font-size: 12pt;
 }
+
+.expenditure-card {
+    background-color: #f6e58d;
+}
+
+.chart-card {
+    background-color: #dff9fb;
+}
