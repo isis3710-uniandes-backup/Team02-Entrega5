@@ -8,8 +8,8 @@ const axios = require("axios");
 class Board extends Component {
 
     state = {
-        username: this.props.location.state.username,
-        password: this.props.location.state.password,
+        username: this.props.username,
+        password: this.props.password,
         chartData: ''
     }
 

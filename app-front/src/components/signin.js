@@ -12,11 +12,11 @@ export default class SignIn extends Component {
     email: "",
     password: ""
   }
-  
+
   //Habilitar el formulario de registro del usuario.
   clickSignIn = async event => {
     event.preventDefault();
-    this.setState({role: "guest"}); //Pone al nuevo usuario con permisos de cliente.
+    this.setState({ role: "guest" }); //Pone al nuevo usuario con permisos de cliente.
 
     //Verificar que todos los campos sean correctos.
     let empty = "";
@@ -36,12 +36,16 @@ export default class SignIn extends Component {
       history.replace("/login"); //Avanzar de vista.
     }
     catch (err) {
-      if (err.request.status === 400) {        
+      if (err.request.status === 400) {
         alert(err.response.data.message);
       }
-      else {alert(err);}
-    }    
-  };  
+      else { alert(err); }
+    }
+  };
+
+  clickCancel = () => {
+    history.replace("/login");
+  }
 
   render() {
     return (
@@ -64,18 +68,18 @@ export default class SignIn extends Component {
                 <h2 className="text-center mt-3">Login</h2>
               </div>
               <form className="container-fluid" noValidate>
-              <div className="form-group">
+                <div className="form-group">
                   <label>Full Name</label>
                   <input
                     type="text"
                     name="fName"
                     className="form-control"
-                    id="fName"                    
+                    id="fName"
                     placeholder="Enter your fullname"
                     aria-label="User's fullname"
                     onChange={evt => this.setState({ fullname: evt.target.value })}
                     required
-                  />                  
+                  />
                 </div>
                 <div className="form-group">
                   <label>Username</label>
@@ -83,13 +87,13 @@ export default class SignIn extends Component {
                     type="text"
                     name="uName"
                     className="form-control"
-                    id="userName"                    
+                    id="userName"
                     placeholder="Enter your username"
                     aria-label="Username Field"
                     onChange={evt => this.setState({ username: evt.target.value })}
                     required
-                  />                  
-                </div>                
+                  />
+                </div>
                 <div className="form-group">
                   <label>Email</label>
                   <input
@@ -97,11 +101,11 @@ export default class SignIn extends Component {
                     name="uemail"
                     className="form-control"
                     id="userEmail"
-                    placeholder="Enter your email"                    
+                    placeholder="Enter your email"
                     label="Password Field"
                     onChange={evt => this.setState({ email: evt.target.value })}
                     required
-                  />                  
+                  />
                 </div>
                 <div className="form-group">
                   <label>Password</label>
@@ -110,17 +114,24 @@ export default class SignIn extends Component {
                     name="uPass"
                     className="form-control"
                     id="userPass"
-                    placeholder="User's account password"                    
+                    placeholder="User's account password"
                     label="Password Field"
                     onChange={evt => this.setState({ password: evt.target.value })}
                     required
-                  />                  
+                  />
                 </div>
-                <div className="row justify-content-center">                  
+                <div className="row justify-content-center">
+                  <button
+                    type="button"
+                    onClick={this.clickCancel}
+                    className="btn btn-secondary m-3"
+                  >
+                    Cancel
+                  </button>
                   <button
                     type="button"
                     onClick={this.clickSignIn}
-                    className="btn btn-secondary m-3"
+                    className="btn btn-primary m-3"
                   >
                     Submit
                   </button>

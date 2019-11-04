@@ -63,7 +63,7 @@ class Expenditure extends Component {
                             <div className="form-group">
                                 <label htmlFor="selectCategory">Category</label>
                                 <select className="form-control" id="selectCategory" name="category">
-                                    {this.state.categories.map(value => <option>{value}</option>)}
+                                    {this.state.categories.sort().map(value => <option>{value}</option>)}
 
                                 </select>
                             </div>

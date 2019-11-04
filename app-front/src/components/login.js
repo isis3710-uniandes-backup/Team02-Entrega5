@@ -11,7 +11,7 @@ export default class Login extends Component {
 
   state = {
     username: "",
-    password: "",    
+    password: "",
   };
 
   //Habilitar el formulario de registro del usuario.
@@ -30,7 +30,7 @@ export default class Login extends Component {
   //Habilitar la ventana de login.
   clickLog = async event => {
     try {
-      
+
       //* Actualizar el componente sin dar refresh
       event.preventDefault();
 
@@ -52,7 +52,7 @@ export default class Login extends Component {
         localStorage.setItem("token", res.token);
         alert("Comprobacion exitosa"); //TODO Cambiar por un toastr.
         history.replace({
-          pathname: "/board",
+          pathname: "/home",
           state: {
             username: this.state.username,
             password: this.state.password
@@ -81,7 +81,7 @@ export default class Login extends Component {
                   height="350px"
                   width="350px"
                 />
-                <h2 className="text-center mt-3">Login</h2>                
+                <h2 className="text-center mt-3">Login</h2>
               </div>
               <form className="container-fluid">
                 <div className="form-group">
@@ -117,22 +117,19 @@ export default class Login extends Component {
                 <div className="row justify-content-center">
                   <button
                     type="button"
-                    onClick={this.clickLog}
-                    className="btn btn-secondary m-3"
-                    style={{
-                      backgroundColor: "#aa2d00",
-                      borderColor: "#aa2d00"
-                    }}
-                  >
-                    {" "}
-                    Log In{" "}
-                  </button>
-                  <button
-                    type="button"
                     onClick={this.clickSignIn}
                     className="btn btn-secondary m-3"
                   >
                     Register
+                  </button>
+                  <button
+                    type="button"
+                    onClick={this.clickLog}
+                    className="btn btn-success m-3"
+
+                  >
+                    {" "}
+                    Log In{" "}
                   </button>
                 </div>
               </form>
