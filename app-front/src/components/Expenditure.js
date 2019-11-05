@@ -71,7 +71,7 @@ class Expenditure extends Component {
                             <div className="form-group">
                                 <label htmlFor="selectCategory" className="mylabel">Category</label>
                                 <select className="form-control" id="selectCategory" name="category">
-                                    {this.state.categories.sort().map(value => <option>{value}</option>)}
+                                    {this.state.categories.sort().map((value, idx) => <option key={idx}>{value}</option>)}
 
                                 </select>
                             </div>
@@ -92,10 +92,10 @@ class Expenditure extends Component {
                             <hr></hr>
                             <div className="row justify-content-center">
                                 <div className="col-6 text-center">
-                                    <button type="button" className="btn btn-danger" onClick={this.clickCancel} data-dismiss="modal">Cancel</button>
+                                    <button type="button" className="btn btn-danger mylabel" onClick={this.clickCancel} data-dismiss="modal">Cancel</button>
                                 </div>
                                 <div className="col-6 text-center">
-                                    <button type="submit" value="Submit" className="btn btn-warning">Submit</button>
+                                    <button type="submit" value="Submit" className="btn btn-warning mylabel">Submit</button>
                                 </div>
                             </div>
                         </form>

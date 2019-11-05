@@ -66,7 +66,7 @@ class Board extends Component {
                         <Expenditure username={this.state.username} key={this.state.username} password={this.state.password} refreshData={this.getChartData} />
                     </div>
                     <div className="col-8">
-                        <Dashboard username={this.state.username} password={this.state.password} data={this.getData()}/>
+                        <Dashboard key="Dashboard" username={this.state.username} password={this.state.password} data={this.getData()}/>
                     </div>
                 </div>
             </div>

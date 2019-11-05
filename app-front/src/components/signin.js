@@ -57,7 +57,7 @@ export default class SignIn extends Component {
               className="col-4 centrar card p-3 mb-5 shadow"
             >
               <div className="container-fluid justify-content-center">
-                <h1 className="text-center mb4">Security</h1>
+                <h1 className="text-center mb4">Online Wallet</h1>
                 <img
                   src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png"
                   alt="wallet"
@@ -65,7 +65,7 @@ export default class SignIn extends Component {
                   height="180px"
                   width="180px"
                 />
-                <h2 className="text-center mt-3">Login</h2>
+                <h2 className="text-center mt-3">Register</h2>
               </div>
               <form className="container-fluid" noValidate>
                 <div className="form-group">
@@ -124,14 +124,14 @@ export default class SignIn extends Component {
                   <button
                     type="button"
                     onClick={this.clickCancel}
-                    className="btn btn-secondary m-3"
+                    className="btn btn-secondary m-3 mylabel"
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
                     onClick={this.clickSignIn}
-                    className="btn btn-primary m-3"
+                    className="btn btn-primary m-3 mylabel"
                   >
                     Submit
                   </button>
