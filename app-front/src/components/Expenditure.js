@@ -51,6 +51,12 @@ class Expenditure extends Component {
         }
     }
 
+    clickCancel = ()=>{
+        this.refs.description.value = '';
+        this.refs.date.value = '';
+        this.refs.amount.value = '';
+    }
+
     render() {
         return (
             <div>
@@ -69,22 +75,22 @@ class Expenditure extends Component {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="inputDescription">Description </label>
-                                <textarea type="text" name="description" className="form-control" id="inputDescription"
+                                <textarea ref="description" type="text" name="description" className="form-control" id="inputDescription"
                                     placeholder="Dinner at steakhouse"></textarea>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="inputDate">Date </label>
-                                <input type="date" name="date" className="form-control" id="inputDate"></input>
+                                <input ref="date" type="date" name="date" className="form-control" id="inputDate"></input>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="inputAmount">Amount </label>
-                                <input type="number" name="amount" className="form-control" id="inputAmount"
+                                <input ref="amount" type="number" name="amount" className="form-control" id="inputAmount"
                                     placeholder="1000"></input>
                             </div>
                             <hr></hr>
                             <div className="row justify-content-center">
                                 <div className="col-6 text-center">
-                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" className="btn btn-danger" onClick={this.clickCancel} data-dismiss="modal">Cancel</button>
                                 </div>
                                 <div className="col-6 text-center">
                                     <button type="submit" value="Submit" className="btn btn-success">Submit</button>

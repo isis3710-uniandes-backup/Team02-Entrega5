@@ -14,17 +14,18 @@ class DailyDashboard extends Component {
     }
 
     getChartData = () => {
+        const fechaini = this.props.fechaIni;
+        const fechaFin = this.props.fechaFin;
         axios({
-            method: "GET",
+            method: "POST",
             url: data.getCostTime,
             headers: { authorization: "Bearer " + localStorage.getItem("token") },
             data:{
-                inicialTime:this.props.fechaIni,
-                finalTime: this.props.fechaFin
+                inicialTime:fechaini,
+                finalTime: fechaFin,
             },
         }).then(res => {
-            console.log(this.props.fechaIni);
-            console.log(this.props.fechaFin);
+            console.log(res);
             let categoriesData = {};
             for (let c of categories) {
                 //console.log(c);
