@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Board from './Board';
 import history from '../history';
 import UserProfile from './userProfile';
+import Calendario from './Calendario.js';
 
 class Home extends Component {
 	componentDidMount() {
@@ -30,6 +31,12 @@ class Home extends Component {
 	changeCuenta = () => {
 		this.setState({
 			board: 'Micuenta'
+		});
+	};
+
+	changeCalendario = () => {
+		this.setState({
+			board: 'calendario'
 		});
 	};
 
@@ -69,6 +76,13 @@ class Home extends Component {
 							>
 								Mi Cuenta
 							</button>
+
+							<button
+								className="nav-item nav-link navbutton"
+								onClick={this.changeCalendario}
+							>
+								Calendario
+							</button>
 						</div>
 					</div>
 					<div>
@@ -80,14 +94,14 @@ class Home extends Component {
 				<br></br>
 				<br></br>
 				<br></br>
-				{this.state.board === 'board' ? (
+				{(this.state.board === 'board') ? (
 					<Board
 						username={this.state.username}
 						password={this.state.password}
 					/>
-				) : (
-					<UserProfile dataprops={this.state} />
-				)}
+				) : ((this.state.board==='calendario')?(
+					<Calendario dataprops={this.state} />
+				):(<UserProfile dataprops={this.state}/>))}
 			</div>
 		);
 	}
