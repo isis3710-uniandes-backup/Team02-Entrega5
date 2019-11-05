@@ -58,8 +58,8 @@ export default class Gasto extends Component {
 				</div>
 				<br></br>
 				<ul className="list-group">
-					<li className="list-group-item list-group-item-light"><strong>Category:</strong> {this.props.data.category} </li>
-					<li className="list-group-item list-group-item-light"><i class="fas fa-calendar-day"></i><strong> Date:</strong> {this.props.data.date.split('T')[0]} </li>
+					<li className="list-group-item list-group-item-light"><i class="fas fa-marker"></i><strong> Category:</strong> {this.props.data.category} </li>
+					<li className="list-group-item list-group-item-light"><i class="fas fa-calendar"></i><strong> Date:</strong> {this.props.data.date.split('T')[0]} </li>
 					<li className="list-group-item list-group-item-light"><i class="fas fa-money-bill"></i> <strong> Amount:</strong> ${this.props.data.amount} </li>
 					<li className="list-group-item list-group-item-light"><i class="fas fa-align-left"></i> <strong>  Description:</strong> {this.props.data.description} </li>
 
