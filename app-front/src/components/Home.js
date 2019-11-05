@@ -71,7 +71,7 @@ class Home extends Component {
 			<div>
 				<link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
 				<nav className="navbar fixed-top navbar-expand-lg navbar-dark navconfig">
-					<a href="#home" className="navbar-brand title text-white">OnlineWallet</a>
+					<a href="#home-button" className="navbar-brand title text-white">OnlineWallet</a>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -86,6 +86,7 @@ class Home extends Component {
 					<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 						<div className="navbar navbar-inverse">
 							<button
+								id="home-button"
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHome}
 							>

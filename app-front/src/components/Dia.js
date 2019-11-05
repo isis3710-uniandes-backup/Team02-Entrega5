@@ -46,8 +46,8 @@ class Dia extends Component {
     render() {
         return (
             <div className="card" >
-                <button  className="btn btn-primary dia" width="30px" height="30px" onClick={() => { this.detalle() }}>
-                    <p>{this.props.value}</p>
+                <button  className="btn btn-primary dia" width="35px" height="35px" onClick={() => { this.detalle() }}>
+                    <p style={{fontSize: 45,}}>{this.props.value}</p>
                 </button>
             </div>
         );

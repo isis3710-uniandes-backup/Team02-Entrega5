@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ToastsContainer, ToastsStore } from 'react-toasts';
 import { data } from "../params";
 import history from "../history";
 import '../css/signin.css'
@@ -27,19 +28,19 @@ export default class SignIn extends Component {
     }
 
     if (empty.length !== 0) {
-      return alert(empty);
+      return ToastsStore.error(empty);
     }
 
     try {
       let message = await axios.post(data.addUser, this.state); //Toma los datos del estado.
-      alert(message.data);
+      alert('Usuario creado exitosamente');
       history.replace("/login"); //Avanzar de vista.
     }
     catch (err) {
       if (err.request.status === 400) {
-        alert(err.response.data.message);
+        ToastsStore.error(err.response.data.message);
       }
-      else { alert(err); }
+      else { ToastsStore.err(err); }
     }
   };
 
@@ -142,6 +143,7 @@ export default class SignIn extends Component {
             </div>
           </div>
         </div>
+        <ToastsContainer store={ToastsStore} />
       </div>
     );
   }

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';import { ToastsContainer, ToastsStore } from 'react-toasts';
+
 import { data } from '../params';
 import history from '../history';
 import '../css/signin.css';
@@ -36,18 +37,19 @@ export default class Login extends Component {
 			//TODO Utilizar una forma mas elegante de dar una notificación.
 
 			if (this.state.username.length === 0)
-				return alert('Please enter your username');
+				return ToastsStore.warning('Please enter your username');
 			if (this.state.password.length === 0)
-				return alert('Please enter your password');
+				return ToastsStore.warning('Please enter your password');
 
 			//* Llamar al backend: Peticion traer los datos de inicio de sesión.
 			let res = await this.getLogData(this.state.username, this.state.password);
 			if (res === undefined || !res.success)
-				return alert(
+				return ToastsStore.error(
 					"The email and password doesn't match with any registered user, check the credentials"
 				);
 			else if (res.success) {
 				//* Autenticación Exitosa
+				ToastsStore.success('Autenticación exitosa');
 				localStorage.setItem('token', res.token);
 				history.replace({
 					pathname: '/home',
@@ -59,7 +61,8 @@ export default class Login extends Component {
 			}
 		} catch (err) {
 			if (err.response.status === 404) {
-				alert('User Not Found');
+				ToastsStore.error('User Not Found')
+				//alert('User Not Found');
 			}
 		}
 	};
@@ -134,6 +137,7 @@ export default class Login extends Component {
 						</div>
 					</div>
 				</div>
+				<ToastsContainer store={ToastsStore} />
 			</div>
 		);
 	}
