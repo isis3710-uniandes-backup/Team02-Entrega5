@@ -95,7 +95,7 @@ export default class SignIn extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Email</label>
+                  <label id="email-label">Email</label>
                   <input
                     type="email"
                     name="uemail"
@@ -103,12 +103,13 @@ export default class SignIn extends Component {
                     id="userEmail"
                     placeholder="Enter your email"
                     label="Password Field"
+                    aria-labelledby="email-label"
                     onChange={evt => this.setState({ email: evt.target.value })}
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
+                  <label id="password-label">Password</label>
                   <input
                     type="password"
                     name="uPass"
@@ -116,6 +117,7 @@ export default class SignIn extends Component {
                     id="userPass"
                     placeholder="User's account password"
                     label="Password Field"
+                    aria-labelledby="password-label"
                     onChange={evt => this.setState({ password: evt.target.value })}
                     required
                   />
@@ -131,7 +133,7 @@ export default class SignIn extends Component {
                   <button
                     type="button"
                     onClick={this.clickSignIn}
-                    className="btn btn-primary m-3 mylabel"
+                    className="btn btn-warning m-3 mylabel"
                   >
                     Submit
                   </button>
