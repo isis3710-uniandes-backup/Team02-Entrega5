@@ -69,6 +69,7 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
+				<link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
 				<nav className="navbar fixed-top navbar-expand-lg navbar-dark navconfig">
 					<h5 className="navbar-brand">OnlineWallet</h5>
 					<button
@@ -85,26 +86,26 @@ class Home extends Component {
 					<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 						<div className="navbar navbar-inverse">
 							<button
-								className="nav-item nav-link navbutton botones"
+								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHome}
 							>
 								Home <span className="sr-only">(current)</span>
 							</button>
 							<button
-								className="nav-item nav-link navbutton botones"
+								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeCuenta}
 							>
 								Mi Cuenta
 							</button>
 
 							<button
-								className="nav-item nav-link navbutton botones"
+								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeCalendario}
 							>
 								Calendario
 								</button>
 							<button
-								className="nav-item nav-link navbutton botones"
+								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHistorial}
 							>
 								Historial
@@ -112,7 +113,7 @@ class Home extends Component {
 						</div>
 					</div>
 					<div>
-						<button className="btn btn-danger" onClick={this.logOut}>
+						<button className="btn btn-danger mylabel" onClick={this.logOut} >
 							Log Out
 						</button>
 					</div>

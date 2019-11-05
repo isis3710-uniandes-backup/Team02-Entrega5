@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart } from "react-google-charts";
 import '../css/signin.css';
 
+
 class Dashboard extends Component {
 
     state = {
@@ -66,11 +67,12 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container-float">
+                <link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
                 <div className="row">
                     <div className="col-9">
                         <div className="card shadow chart-card">
                             <div className="card-header text-center">
-                                <h1>Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
+                                <h1 id = "bienv">Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
                             </div>
                             <div className="card-body" id="card">
                                 <div className="row justify-content-center">
@@ -104,11 +106,11 @@ class Dashboard extends Component {
                     <div className="col-3">
                         <div className="cards shadow bg-light">
                             <div className="card-header">
-                                <h2>Filter</h2>
+                                <h2 id = "filter">Filter</h2>
                             </div>
                             <div className="card-body">
                                 {this.props.data.filter(element => element[0] !== "Expenditure").map(
-                                    (item) => <div className="custom-control custom-checkbox"><input type="checkbox" className="custom-control-input" id={item[0]} ref={item[0]}></input><label className="custom-control-label" htmlFor={item[0]}>{item[0]}</label></div>
+                                    (item) => <div className="custom-control custom-checkbox mylabel"><input type="checkbox" className="custom-control-input" id={item[0]} ref={item[0]}></input><label className="custom-control-label" htmlFor={item[0]}>{item[0]}</label></div>
                                 )}
 
                                 <hr></hr>

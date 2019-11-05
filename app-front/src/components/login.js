@@ -65,13 +65,14 @@ export default class Login extends Component {
 	};
 
 	render() {
-		return (
+		return (			
 			<div className="center-block justify-content-center">
+				<link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
 				<div className="container-fluid justify-content-center">
 					<div data-aos="flip-left" data-aos-duration="1000">
 						<div id="card-login" className="col-4 centrar card p-3 mb-5 shadow">
 							<div className="container-fluid justify-content-center">
-								<h1 className="text-center mb4">Security</h1>
+								<h1 className="text-center mb4" id="security">Security</h1>
 								<img
 									src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png"
 									alt="billetera"
@@ -79,11 +80,11 @@ export default class Login extends Component {
 									height="350px"
 									width="350px"
 								/>
-								<h2 className="text-center mt-3">Login</h2>
+								<h2 className="text-center mt-3" id="login">Login</h2>
 							</div>
 							<form className="container-fluid">
 								<div className="form-group">
-									<label>Username</label>
+									<label id = "uname">Username</label>
 									<input
 										type="text"
 										name="uName"
@@ -98,7 +99,7 @@ export default class Login extends Component {
 									/>
 								</div>
 								<div className="form-group">
-									<label>Password</label>
+									<label id = "password">Password</label>
 									<input
 										type="password"
 										name="uPass"

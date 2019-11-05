@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ToastsContainer, ToastsStore } from 'react-toasts';
 import { data } from "../params";
 import { categories } from "../categories";
+import '../css/signin.css';
 
 const axios = require("axios");
 
@@ -61,29 +62,30 @@ class Expenditure extends Component {
         return (
             <div>
                 <div className="card shadow expenditure-card">
+                <link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
                     <div className="card-header">
-                        <h2>Add Expenditure</h2>
+                        <h2 id = "exp">Add Expenditure</h2>
                     </div>
                     <div className="card-body">
                         <form id="form-oferta" onSubmit={this.handleSubmit.bind(this)}>
                             <div className="form-group">
-                                <label htmlFor="selectCategory">Category</label>
+                                <label htmlFor="selectCategory" className="mylabel">Category</label>
                                 <select className="form-control" id="selectCategory" name="category">
                                     {this.state.categories.sort().map(value => <option>{value}</option>)}
 
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="inputDescription">Description </label>
+                                <label htmlFor="inputDescription" className="mylabel">Description </label>
                                 <textarea ref="description" type="text" name="description" className="form-control" id="inputDescription"
                                     placeholder="Dinner at steakhouse"></textarea>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="inputDate">Date </label>
+                                <label htmlFor="inputDate" className="mylabel">Date </label>
                                 <input ref="date" type="date" name="date" className="form-control" id="inputDate"></input>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="inputAmount">Amount </label>
+                                <label htmlFor="inputAmount" className="mylabel">Amount </label>
                                 <input ref="amount" type="number" name="amount" className="form-control" id="inputAmount"
                                     placeholder="1000"></input>
                             </div>
