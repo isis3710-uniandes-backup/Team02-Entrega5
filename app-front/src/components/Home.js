@@ -3,6 +3,7 @@ import Board from './Board';
 import history from '../history';
 import UserProfile from './userProfile';
 import Calendario from './Calendario.js';
+import DailyDashboard from './DailyDashboard';
 
 class Home extends Component {
 	componentDidMount() {
@@ -33,6 +34,12 @@ class Home extends Component {
 			board: 'Micuenta'
 		});
 	};
+
+	changeState = () =>{
+		this.setState({
+			board: 'daily'
+		});
+	}
 
 	changeCalendario = () => {
 		this.setState({
@@ -100,7 +107,7 @@ class Home extends Component {
 						password={this.state.password}
 					/>
 				) : ((this.state.board==='calendario')?(
-					<Calendario dataprops={this.state} />
+					<Calendario dataprops={this.state} change = {this.changeState} />
 				):(<UserProfile dataprops={this.state}/>))}
 			</div>
 		);

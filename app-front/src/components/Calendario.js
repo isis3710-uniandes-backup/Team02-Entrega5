@@ -35,13 +35,13 @@ class Calendario extends Component {
 
     render() {
         const lista1 = this.state.dias1.map((number) =>
-            <Dia value={number} />
+            <Dia change = {this.props.change} value={number} />
         );
         const lista2 = this.state.dias2.map((number) =>
-            <Dia value={number} />
+            <Dia change = {this.props.change} value={number} />
         );
         const lista3 = this.state.dias3.map((number) =>
-            <Dia value={number} />
+            <Dia change = {this.props.change} value={number} />
         );
 
 
