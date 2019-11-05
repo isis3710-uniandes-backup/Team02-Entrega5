@@ -7,6 +7,7 @@ import BookList from "./components/bookList";
 import SignIn from "./components/signin";
 import Board from "./components/Board";
 import Home from "./components/Home";
+import DailyDashboard from "./components/DailyDashboard";
 
 export const makeRoutes = () => {
   return (    
@@ -19,6 +20,7 @@ export const makeRoutes = () => {
             <Route path="/login" render={props => <Login {...props} />} />
             <Route path="/getBooks" render={props => <BookList {...props} />} />
             <Route path="/signin" render={props => <SignIn {...props} />} />
+            <Route path="/daily" render={props=> <DailyDashboard {...props}/>}/>
           </>
         </Switch>
       </Router>    
