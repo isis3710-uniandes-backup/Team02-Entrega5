@@ -50,9 +50,17 @@ class Dashboard extends Component {
     }
 
     clickClearFilter = () => {
+        /*
         this.props.data.filter(element => element[0] !== "Expenditure").map((element) => {
             this.refs[element[0]].checked = false;
-        })
+        })*/
+
+        let aux = this.props.data.filter(element => element[0] !== "Expenditure");
+        for (let element of aux){
+            this.refs[element[0]].checked = false;
+        }
+
+
         this.setState({ showFiltered: false });
     }
 
@@ -90,10 +98,11 @@ class Dashboard extends Component {
                                                 backgroundColor: { fill: 'transparent' },
                                                 chartArea: { 'width': '95%', 'height': '85%' },
                                                 titleTextStyle: {
+                                                    fontName: 'Rubik',
                                                     fontSize: 30, // 12, 18 whatever you want (don't specify px)
                                                     bold: true,    // true or false
 
-                                                }
+                                                },
                                             }}
                                             rootProps={{ 'data-testid': '1' }}
                                         />
@@ -110,16 +119,16 @@ class Dashboard extends Component {
                             </div>
                             <div className="card-body">
                                 {this.props.data.filter(element => element[0] !== "Expenditure").map(
-                                    (item) => <div className="custom-control custom-checkbox mylabel"><input type="checkbox" className="custom-control-input" id={item[0]} ref={item[0]}></input><label className="custom-control-label" htmlFor={item[0]}>{item[0]}</label></div>
+                                    (item, idx) => <div key={idx} className="custom-control custom-checkbox mylabel"><input type="checkbox" className="custom-control-input" id={item[0]} ref={item[0]}></input><label className="custom-control-label" htmlFor={item[0]}>{item[0]}</label></div>
                                 )}
 
                                 <hr></hr>
                                 <div className="row text-center">
                                     <div className="col-6">
-                                        <button className="btn btn-danger btn-sm" onClick={this.clickClearFilter}>Clear</button>
+                                        <button className="btn btn-danger btn-sm mylabel" onClick={this.clickClearFilter}>Clear</button>
                                     </div>
                                     <div className="col-6">
-                                        <button type="submit" value="Submit" className="btn btn-warning btn-sm" onClick={this.clickFilter}>Filter</button>
+                                        <button type="submit" value="Submit" className="btn btn-warning btn-sm mylabel" onClick={this.clickFilter}>Filter</button>
                                     </div>
 
                                 </div>

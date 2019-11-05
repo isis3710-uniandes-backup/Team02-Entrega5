@@ -22,7 +22,7 @@ export default class Login extends Component {
 	//Obtener la información de inicio de sesión y el respectivo token.
 	getLogData = async (username, password) => {
 		let info = { username: username, password: password };
-		console.log('Informacion del formulario', info);
+		//console.log('Informacion del formulario', info);
 		let retrieved = await axios.post(data.login, info);
 		return retrieved.data;
 	};
@@ -72,7 +72,7 @@ export default class Login extends Component {
 					<div data-aos="flip-left" data-aos-duration="1000">
 						<div id="card-login" className="col-4 centrar card p-3 mb-5 shadow">
 							<div className="container-fluid justify-content-center">
-								<h1 className="text-center mb4" id="security">Security</h1>
+								<h1 className="text-center mb4" id="security">Online Wallet</h1>
 								<img
 									src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png"
 									alt="wallet"
@@ -117,14 +117,14 @@ export default class Login extends Component {
 									<button
 										type="button"
 										onClick={this.clickSignIn}
-										className="btn btn-secondary m-3"
+										className="btn btn-secondary m-3 mylabel"
 									>
 										Register
 									</button>
 									<button
 										type="button"
 										onClick={this.clickLog}
-										className="btn btn-warning m-3"
+										className="btn btn-warning m-3 mylabel"
 									>
 										{' '}
 										Log In{' '}

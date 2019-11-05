@@ -34,8 +34,8 @@ class Dia extends Component {
         else{
             mes = this.props.mes.toString();
         }
-        console.log(mes);
-        console.log(numero);
+        //console.log(mes);
+        //console.log(numero);
 
         let ini = "2019-"+mes+"-"+numero;
         let fin = "2019-"+mes+"-"+dia2;

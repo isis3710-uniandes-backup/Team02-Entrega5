@@ -24,8 +24,8 @@ class Home extends Component {
 		username: '',
 		password: '',
 		board: 'board',
-		fechaIni:'',
-		fechaFin:'',
+		fechaIni: '',
+		fechaFin: '',
 	};
 
 	// Permite hacer log out en el sistema, regresa al menu de login.
@@ -40,11 +40,11 @@ class Home extends Component {
 		});
 	};
 
-	changeState = (Ini,Fin) =>{
+	changeState = (Ini, Fin) => {
 		this.setState({
 			board: 'daily',
-			fechaIni:Ini,
-			fechaFin:Fin,
+			fechaIni: Ini,
+			fechaFin: Fin,
 		});
 	}
 
@@ -71,7 +71,12 @@ class Home extends Component {
 			<div>
 				<link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
 				<nav className="navbar fixed-top navbar-expand-lg navbar-dark navconfig">
-					<h5 className="navbar-brand">OnlineWallet</h5>
+					<a href="#home" className="navbar-left"><img src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png" alt="wallet"
+									className="rounded mx-auto d-block img-fluid"
+									height="50px"
+									width="50px"
+									style={{marginRight: 1,}}></img></a>
+					<a href="#home" className="navbar-brand title text-white">OnlineWallet</a>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -89,25 +94,25 @@ class Home extends Component {
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHome}
 							>
-								Home <span className="sr-only">(current)</span>
+								<i className="fas fa-home"></i> Home <span className="sr-only">(current)</span>
 							</button>
 							<button
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeCalendario}
 							>
-								Calendar
+								<i className="fas fa-calendar"></i> Calendar
 								</button>
 							<button
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHistorial}
 							>
-								History
+								<i className="fas fa-clock"></i> History
 							</button>
 							<button
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeCuenta}
 							>
-								MyAccount
+								<i className="fas fa-user-alt"></i> MyAccount
 							</button>
 						</div>
 					</div>
@@ -128,15 +133,15 @@ class Home extends Component {
 					/>
 				) : this.state.board === 'Micuenta' ? (
 					<UserProfile dataprops={this.state} />
-				) : this.state.board=== 'historial'?(
+				) : this.state.board === 'historial' ? (
 					<GastosList
 						username={this.state.username}
 						password={this.state.password}
 					/>
-				):this.state.board==='calendario'?(<Calendario username={this.state.username}
-					password={this.state.password} change={this.changeState}/>)
-				:(<DailyDashboard username={this.state.username}
-					password={this.state.password} fechaIni={this.state.fechaIni} fechaFin={this.state.fechaFin}/>)}
+				) : this.state.board === 'calendario' ? (<Calendario username={this.state.username}
+					password={this.state.password} change={this.changeState} />)
+								: (<DailyDashboard username={this.state.username}
+									password={this.state.password} fechaIni={this.state.fechaIni} fechaFin={this.state.fechaFin} />)}
 			</div>
 		);
 	}

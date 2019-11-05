@@ -41,14 +41,14 @@ class Calendario extends Component {
     }
 
     render() {
-        const lista1 = this.state.dias1.map((number) =>
-            <Dia change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
+        const lista1 = this.state.dias1.map((number, idx) =>
+            <Dia key={idx} change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
         );
-        const lista2 = this.state.dias2.map((number) =>
-            <Dia change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
+        const lista2 = this.state.dias2.map((number, idx) =>
+            <Dia key={idx} change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
         );
-        const lista3 = this.state.dias3.map((number) =>
-            <Dia change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
+        const lista3 = this.state.dias3.map((number, idx) =>
+            <Dia key={idx} change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
         );
 
    
@@ -74,11 +74,11 @@ class Calendario extends Component {
                         </div>
                     </div>
                     <div className="col ">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div className="dropdown">
+                            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Mes
   </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(1,"Enero")}}>Enero</button>
                                 <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(2, "Febrero")}}>Febrero</button>
                                 <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(3, "Marzo")}}>Marzo</button>
