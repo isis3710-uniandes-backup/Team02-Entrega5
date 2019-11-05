@@ -92,22 +92,21 @@ class Home extends Component {
 							</button>
 							<button
 								className="nav-item nav-link navbutton botones"
-								onClick={this.changeCuenta}
-							>
-								Mi Cuenta
-							</button>
-
-							<button
-								className="nav-item nav-link navbutton botones"
 								onClick={this.changeCalendario}
 							>
-								Calendario
+								Calendar
 								</button>
 							<button
 								className="nav-item nav-link navbutton botones"
 								onClick={this.changeHistorial}
 							>
-								Historial
+								History
+							</button>
+							<button
+								className="nav-item nav-link navbutton botones"
+								onClick={this.changeCuenta}
+							>
+								MyAccount
 							</button>
 						</div>
 					</div>
@@ -117,6 +116,7 @@ class Home extends Component {
 						</button>
 					</div>
 				</nav>
+				<br></br>
 				<br></br>
 				<br></br>
 				<br></br>
