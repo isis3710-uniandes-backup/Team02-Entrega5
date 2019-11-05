@@ -83,7 +83,7 @@ class Home extends Component {
 				<br></br>
 				<br></br>
 				<br></br>
-				{this.state.board == 'board' ? (
+				{this.state.board === 'board' ? (
 					<Board
 						username={this.state.username}
 						password={this.state.password}

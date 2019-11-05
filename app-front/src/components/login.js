@@ -105,7 +105,7 @@ export default class Login extends Component {
 										className="form-control"
 										id="userPass"
 										placeholder="User's account password"
-										label="password-field"
+										aria-label="password-field"
 										onChange={evt =>
 											this.setState({ password: evt.target.value })
 										}
