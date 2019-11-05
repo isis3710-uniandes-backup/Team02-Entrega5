@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/signin.css';
-import history from '../history';
 
 class Dia extends Component {
 
@@ -13,16 +12,16 @@ class Dia extends Component {
 
     }
     detalle(){
-        let ini = "2019-11-04T00:00:00";
-        let fin = "2019-11-05T00:00:00";
-        //this.props.change();
+        let ini = "2019-06-11";
+        let fin = "2019-07-11";
+        this.props.change(ini,fin);
     }
 
 
     render() {
         return (
             <div className="card" >
-                <button  className="btn btn-primary dia" width="30px" height="30px" onClick={this.detalle()}>
+                <button  className="btn btn-primary dia" width="30px" height="30px" onClick={() => { this.detalle() }}>
                     <p>{this.props.value}</p>
                 </button>
             </div>

@@ -25,7 +25,6 @@ class DailyDashboard extends Component {
                 finalTime: fechaFin,
             },
         }).then(res => {
-            console.log(res);
             let categoriesData = {};
             for (let c of categories) {
                 //console.log(c);
