@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Board from './Board';
 import history from '../history';
 import UserProfile from './userProfile';
+import Calendario from './Calendario.js';
+import DailyDashboard from './DailyDashboard';
 import GastosList from './GastosList';
 
 class Home extends Component {
@@ -31,6 +33,18 @@ class Home extends Component {
 	changeCuenta = () => {
 		this.setState({
 			board: 'Micuenta'
+		});
+	};
+
+	changeState = () =>{
+		this.setState({
+			board: 'daily'
+		});
+	}
+
+	changeCalendario = () => {
+		this.setState({
+			board: 'calendario'
 		});
 	};
 
@@ -76,6 +90,13 @@ class Home extends Component {
 							>
 								Mi Cuenta
 							</button>
+
+							<button
+								className="nav-item nav-link navbutton"
+								onClick={this.changeCalendario}
+							>
+								Calendario
+								</button>
 							<button
 								className="nav-item nav-link navbutton"
 								onClick={this.changeHistorial}
@@ -93,19 +114,21 @@ class Home extends Component {
 				<br></br>
 				<br></br>
 				<br></br>
-				{this.state.board === 'board' ? (
+				{(this.state.board === 'board') ? (
 					<Board
 						username={this.state.username}
 						password={this.state.password}
 					/>
 				) : this.state.board === 'Micuenta' ? (
 					<UserProfile dataprops={this.state} />
-				) : (
+				) : this.state.board=== 'historial'?(
 					<GastosList
 						username={this.state.username}
 						password={this.state.password}
 					/>
-				)}
+				):this.state.board==='calendario'?(<Calendario username={this.state.username}
+					password={this.state.password} change={this.changeState}/>)
+				:(<DailyDashboard />)}
 			</div>
 		);
 	}

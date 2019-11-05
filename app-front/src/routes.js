@@ -20,7 +20,7 @@ export const makeRoutes = () => {
 					<Route path="/getBooks" render={props => <BookList {...props} />} />
 					<Route path="/signin" render={props => <SignIn {...props} />} />
 					<Route path="/notAuth" render={props => <NotAuth />} />
-          <Route path="/daily" render={props=> <DailyDashboard {...props}/>}/>
+          			<Route path="/daily" render={props=> <DailyDashboard {...props}/>}/>
 				</>
 			</Switch>
 		</Router>
