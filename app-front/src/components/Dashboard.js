@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
         for (let i of this.props.data) {
             //console.log(this.refs["Laundry"].checked);
-            if(i[0] === "Expenditure"){
+            if (i[0] === "Expenditure") {
                 continue;
             }
             //console.log(i[0]);
@@ -39,12 +39,19 @@ class Dashboard extends Component {
             //Le hacemos setSate a filteredData
             this.setState({ filteredData: filteredData });
             this.setState({ showFiltered: true });
-        }else{
+        } else {
             this.setState({ filteredData: filteredData });
             this.setState({ showFiltered: false });
         }
 
 
+    }
+
+    clickClearFilter = () => {
+        this.props.data.filter(element => element[0] !== "Expenditure").map((element) => {
+            this.refs[element[0]].checked = false;
+        })
+        this.setState({ showFiltered: false });
     }
 
     checkData() {
@@ -104,8 +111,14 @@ class Dashboard extends Component {
                                 )}
 
                                 <hr></hr>
-                                <div className="text-center">
-                                    <button type="submit" value="Submit" className="btn btn-success btn-sm" onClick={this.clickFilter}>Filter</button>
+                                <div className="row text-center">
+                                    <div className="col-6">
+                                        <button className="btn btn-outline-danger btn-sm" onClick={this.clickClearFilter}>Clear</button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button type="submit" value="Submit" className="btn btn-success btn-sm" onClick={this.clickFilter}>Filter</button>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
