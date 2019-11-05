@@ -5,6 +5,8 @@ import UserProfile from './userProfile';
 import Calendario from './Calendario.js';
 import DailyDashboard from './DailyDashboard';
 import GastosList from './GastosList';
+import '../css/signin.css';
+
 
 class Home extends Component {
 	componentDidMount() {
@@ -83,26 +85,26 @@ class Home extends Component {
 					<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 						<div className="navbar-nav">
 							<button
-								className="nav-item nav-link navbutton"
+								className="nav-item nav-link navbutton botones"
 								onClick={this.changeHome}
 							>
 								Home <span className="sr-only">(current)</span>
 							</button>
 							<button
-								className="nav-item nav-link navbutton"
+								className="nav-item nav-link navbutton botones"
 								onClick={this.changeCuenta}
 							>
 								Mi Cuenta
 							</button>
 
 							<button
-								className="nav-item nav-link navbutton"
+								className="nav-item nav-link navbutton botones"
 								onClick={this.changeCalendario}
 							>
 								Calendario
 								</button>
 							<button
-								className="nav-item nav-link navbutton"
+								className="nav-item nav-link navbutton botones"
 								onClick={this.changeHistorial}
 							>
 								Historial
