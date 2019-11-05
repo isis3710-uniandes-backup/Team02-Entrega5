@@ -6,6 +6,7 @@
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+
 .centrar form {
     width: 100%;
     max-width: 410px;
@@ -63,5 +64,35 @@
 #header{
 
     padding-bottom: 20px;
+}
+
+#login{
+    font-family: 'Rubik', sans-serif;
+}
+
+#security{
+    font-family: 'Rubik', sans-serif;
+}
+#bienv{
+    font-family: 'Rubik', sans-serif;
+}
+#exp{
+    font-family: 'Rubik', sans-serif;
+}
+.mylabel{
+    font-family: 'Karla', sans-serif;
+}
+
+#filter{
+    font-family: 'Rubik', sans-serif;
+}
+#uname{
+    font-family: 'Karla', sans-serif;
+}
+#password{
+    font-family: 'Karla', sans-serif;
+}
+#prueba{
+    font-family: 'Karla', sans-serif;
 }
 
