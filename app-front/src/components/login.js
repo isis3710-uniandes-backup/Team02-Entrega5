@@ -75,10 +75,10 @@ export default class Login extends Component {
 								<h1 className="text-center mb4" id="security">Security</h1>
 								<img
 									src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png"
-									alt="billetera"
+									alt="wallet"
 									className="rounded mx-auto d-block img-fluid"
-									height="350px"
-									width="350px"
+									height="180px"
+									width="180px"
 								/>
 								<h2 className="text-center mt-3" id="login">Login</h2>
 							</div>
