@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/signin.css';
 import history from '../history';
+import '../css/signin.css'
+
 
 class Dia extends Component {
 
