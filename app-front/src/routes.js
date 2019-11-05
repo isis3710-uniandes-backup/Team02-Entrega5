@@ -7,7 +7,6 @@ import BookList from './components/bookList';
 import SignIn from './components/signin';
 import Home from './components/Home';
 import NotAuth from './components/notAuth';
-import DailyDashboard from './components/DailyDashboard';
 
 export const makeRoutes = () => {
 	return (

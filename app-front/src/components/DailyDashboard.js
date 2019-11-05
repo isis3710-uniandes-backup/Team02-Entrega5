@@ -16,6 +16,8 @@ class DailyDashboard extends Component {
     getChartData = () => {
         const fechaini = this.props.fechaIni;
         const fechaFin = this.props.fechaFin;
+        console.log(fechaini);
+        console.log(fechaFin);
         axios({
             method: "POST",
             url: data.getCostTime,

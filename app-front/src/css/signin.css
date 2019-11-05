@@ -43,3 +43,20 @@
 .chart-card {
     background-color: #dff9fb;
 }
+
+.dia{
+
+    width: 90px;
+    height: 90px;
+    font-size: 40pt;
+}
+#calendario{
+
+    padding-left: 2cm;
+    padding-top: 30px;
+}
+
+#header{
+
+    padding-bottom: 20px;
+}
