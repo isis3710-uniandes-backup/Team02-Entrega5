@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { data } from '../params';
-import { categories } from '../categories';
 import Gasto from './Gasto';
 const axios = require('axios');
 

@@ -23,13 +23,13 @@ class Calendario extends Component {
         }
         this.setState({ dias1: lista });
         lista = [];
-        for (var i = 11; i < 21; i++) {
-            lista[i] = i;
+        for (var j = 11; j < 21; j++) {
+            lista[j] = j;
         }
         this.setState({ dias2: lista });
         lista = [];
-        for (var i = 21; i < 32; i++) {
-            lista[i] = i;
+        for (var k = 21; k < 32; k++) {
+            lista[k] = k;
         }
         this.setState({ dias3: lista });
     }
@@ -42,13 +42,13 @@ class Calendario extends Component {
 
     render() {
         const lista1 = this.state.dias1.map((number) =>
-            <Dia change={this.props.change} value={number} />
+            <Dia change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
         );
         const lista2 = this.state.dias2.map((number) =>
-            <Dia change={this.props.change} value={number} />
+            <Dia change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
         );
         const lista3 = this.state.dias3.map((number) =>
-            <Dia change={this.props.change} value={number} />
+            <Dia change={this.props.change} value={number} mes = {this.state.mesN} dia = {number}/>
         );
 
    
@@ -79,18 +79,18 @@ class Calendario extends Component {
                                 Mes
   </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(1,"Enero")}}>Enero</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(2, "Febrero")}}>Febrero</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(3, "Marzo")}}>Marzo</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(4, "Abril")}}>Abril</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(5, "Mayo")}}>Mayo</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(6,  "Junio")}}>Junio</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(7, "Julio")}}>Julio</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(8, "Agosto")}}>Agosto</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(9, "Septiembre")}}>Septiembre</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(10, "Octubre")}}>Octubre</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(11, "Noviembre")}}>Noviembre</button>
-                                <button class="dropdown-item" type="button" onClick={() => {this.cambiarMes(12, "Diciembre")}}>Diciembre</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(1,"Enero")}}>Enero</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(2, "Febrero")}}>Febrero</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(3, "Marzo")}}>Marzo</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(4, "Abril")}}>Abril</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(5, "Mayo")}}>Mayo</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(6,  "Junio")}}>Junio</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(7, "Julio")}}>Julio</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(8, "Agosto")}}>Agosto</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(9, "Septiembre")}}>Septiembre</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(10, "Octubre")}}>Octubre</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(11, "Noviembre")}}>Noviembre</button>
+                                <button className="dropdown-item" type="button" onClick={() => {this.cambiarMes(12, "Diciembre")}}>Diciembre</button>
                             </div>
                         </div>
 

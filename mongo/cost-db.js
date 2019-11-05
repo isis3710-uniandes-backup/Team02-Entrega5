@@ -73,8 +73,8 @@ const getCostTime = async (username, inicialTime, finalTime) => {
     return new Promise((resolve, reject) => {
         let iT = new Date(inicialTime);
         let fT = new Date(finalTime);
-        //console.log("Tiempo Inicial", iT);
-        //console.log("Tiempo Final", fT);
+        console.log("Tiempo Inicial", iT);
+        console.log("Tiempo Final", fT);
         //console.log("Prueba", new Date('2/11/2019'));
         cliente.connect(err => {
             if (err) {console.log(err); reject(err)}

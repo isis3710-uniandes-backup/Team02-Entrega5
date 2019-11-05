@@ -16,6 +16,8 @@ class DailyDashboard extends Component {
     getChartData = () => {
         const fechaini = this.props.fechaIni;
         const fechaFin = this.props.fechaFin;
+        console.log(fechaini);
+        console.log(fechaFin);
         axios({
             method: "POST",
             url: data.getCostTime,
@@ -25,7 +27,6 @@ class DailyDashboard extends Component {
                 finalTime: fechaFin,
             },
         }).then(res => {
-            console.log(res);
             let categoriesData = {};
             for (let c of categories) {
                 //console.log(c);

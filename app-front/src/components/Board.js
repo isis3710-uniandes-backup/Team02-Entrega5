@@ -63,7 +63,7 @@ class Board extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-4">
-                        <Expenditure username={this.state.username} password={this.state.password} refreshData={this.getChartData} />
+                        <Expenditure username={this.state.username} key={this.state.username} password={this.state.password} refreshData={this.getChartData} />
                     </div>
                     <div className="col-8">
                         <Dashboard username={this.state.username} password={this.state.password} data={this.getData()}/>

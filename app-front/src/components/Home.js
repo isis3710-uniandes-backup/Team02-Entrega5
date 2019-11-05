@@ -21,7 +21,9 @@ class Home extends Component {
 	state = {
 		username: '',
 		password: '',
-		board: 'board'
+		board: 'board',
+		fechaIni:'',
+		fechaFin:'',
 	};
 
 	// Permite hacer log out en el sistema, regresa al menu de login.
@@ -36,9 +38,11 @@ class Home extends Component {
 		});
 	};
 
-	changeState = () =>{
+	changeState = (Ini,Fin) =>{
 		this.setState({
-			board: 'daily'
+			board: 'daily',
+			fechaIni:Ini,
+			fechaFin:Fin,
 		});
 	}
 
@@ -128,7 +132,8 @@ class Home extends Component {
 					/>
 				):this.state.board==='calendario'?(<Calendario username={this.state.username}
 					password={this.state.password} change={this.changeState}/>)
-				:(<DailyDashboard />)}
+				:(<DailyDashboard username={this.state.username}
+					password={this.state.password} fechaIni={this.state.fechaIni} fechaFin={this.state.fechaFin}/>)}
 			</div>
 		);
 	}
