@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class UserProfile extends Component {
 	render() {
-		console.log(this);
+		//console.log(this);
 		return (
 			<div className="center-block justify-content-center">
 				<div className="container-fluid justify-content-center">
@@ -14,8 +14,8 @@ export default class UserProfile extends Component {
 									src="https://icon-library.net/images/icon-profile/icon-profile-22.jpg"
 									alt="logo"
 									className="rounded mx-auto d-block img-fluid"
-									height="350px"
-									width="350px"
+									height="250px"
+									width="250px"
 								/>
 								<h2 className="text-center mt-3">
 									{this.props.dataprops.username}
