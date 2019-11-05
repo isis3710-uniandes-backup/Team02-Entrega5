@@ -69,7 +69,7 @@ class Dashboard extends Component {
                     <div className="col-9">
                         <div className="card shadow chart-card">
                             <div className="card-header text-center">
-                                <h3>Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h3>
+                                <h1>Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
                             </div>
                             <div className="card-body">
                                 <div className="row justify-content-center">
@@ -103,7 +103,7 @@ class Dashboard extends Component {
                     <div className="col-3">
                         <div className="cards shadow bg-light">
                             <div className="card-header">
-                                <h4>Filter</h4>
+                                <h2>Filter</h2>
                             </div>
                             <div className="card-body">
                                 {this.props.data.filter(element => element[0] !== "Expenditure").map(

@@ -62,7 +62,7 @@ class Expenditure extends Component {
             <div>
                 <div className="card shadow expenditure-card">
                     <div className="card-header">
-                        <h3>Add Expenditure</h3>
+                        <h2>Add Expenditure</h2>
                     </div>
                     <div className="card-body">
                         <form id="form-oferta" onSubmit={this.handleSubmit.bind(this)}>
