@@ -4,6 +4,7 @@ import history from '../history';
 import UserProfile from './userProfile';
 import Calendario from './Calendario.js';
 import DailyDashboard from './DailyDashboard';
+import GastosList from './GastosList';
 
 class Home extends Component {
 	componentDidMount() {
@@ -53,6 +54,12 @@ class Home extends Component {
 		});
 	};
 
+	changeHistorial = () => {
+		this.setState({
+			board: 'historial'
+		});
+	};
+
 	render() {
 		return (
 			<div>
@@ -89,6 +96,12 @@ class Home extends Component {
 								onClick={this.changeCalendario}
 							>
 								Calendario
+								</button>
+							<button
+								className="nav-item nav-link navbutton"
+								onClick={this.changeHistorial}
+							>
+								Historial
 							</button>
 						</div>
 					</div>
@@ -106,9 +119,16 @@ class Home extends Component {
 						username={this.state.username}
 						password={this.state.password}
 					/>
-				) : ((this.state.board==='calendario')?(
-					<Calendario dataprops={this.state} change = {this.changeState} />
-				):(<UserProfile dataprops={this.state}/>))}
+				) : this.state.board === 'Micuenta' ? (
+					<UserProfile dataprops={this.state} />
+				) : this.state.board=== 'historial'?(
+					<GastosList
+						username={this.state.username}
+						password={this.state.password}
+					/>
+				):this.state.board==='calendario'?(<Calendario username={this.state.username}
+					password={this.state.password} change={this.changeState}/>)
+				:(<DailyDashboard />)}
 			</div>
 		);
 	}

@@ -1,26 +1,10 @@
-# JWT-Challenge
-Practice of JWT
+Hola este es el repositorio del grupo 2 para la entrega 4.
 
-Hello, I hope you are having a great day.
+Realizamos una página web que permite a su ususario crear una cuenta y registrar sus diferentes gastos en un momento en especifico.
 
-In this repository you will find a little API implementing security requirements using JWT (Json Web Tokens)
-To test its functionalities clone the repo and import the Postman test which are located in test/.
+Para poder correr la aplicación se deben realizar los siguientes pasos:
+1. Pararse en el directorio raiz y correr npm install
+2. Parase en \app-front  y correr npm install
+3. En el mismo directorio correr npm run build
+4. Finalmente para correr la aplicación se debe correr npm start en el directorio raiz y npm start en \app-front
 
-Get the dependencies using npm i
-
-Enter to the repo and start it using npm start
-
-There are three different roles in the API: admin, librarian and guest.
-
-Following, the users registered are:
-
-1. Admin: username = Geovanny; password = Test; role = admin.
-2. Librarian: username = Maria; password = Test; role = librarian.
-3. Guest: username = Pipo; password = Test; role = guest.
-
-Admin have permissions to do all the operations, librarian can look for all books and the detailed info of all of them
-and finally guest only can see the information of one specific book and just see its basic info.
-
-Have a nice day
-
-Geovanny
