@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Chart } from "react-google-charts";
+import '../css/signin.css';
 
 class Dashboard extends Component {
 
@@ -71,7 +72,7 @@ class Dashboard extends Component {
                             <div className="card-header text-center">
                                 <h1>Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
                             </div>
-                            <div className="card-body">
+                            <div className="card-body" id="card">
                                 <div className="row justify-content-center">
                                     <div className="col-12">
                                         <Chart
@@ -113,10 +114,10 @@ class Dashboard extends Component {
                                 <hr></hr>
                                 <div className="row text-center">
                                     <div className="col-6">
-                                        <button className="btn btn-outline-danger btn-sm" onClick={this.clickClearFilter}>Clear</button>
+                                        <button className="btn btn-danger btn-sm" onClick={this.clickClearFilter}>Clear</button>
                                     </div>
                                     <div className="col-6">
-                                        <button type="submit" value="Submit" className="btn btn-success btn-sm" onClick={this.clickFilter}>Filter</button>
+                                        <button type="submit" value="Submit" className="btn btn-warning btn-sm" onClick={this.clickFilter}>Filter</button>
                                     </div>
 
                                 </div>

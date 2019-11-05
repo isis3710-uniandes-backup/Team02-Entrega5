@@ -93,7 +93,7 @@ class Expenditure extends Component {
                                     <button type="button" className="btn btn-danger" onClick={this.clickCancel} data-dismiss="modal">Cancel</button>
                                 </div>
                                 <div className="col-6 text-center">
-                                    <button type="submit" value="Submit" className="btn btn-success">Submit</button>
+                                    <button type="submit" value="Submit" className="btn btn-warning">Submit</button>
                                 </div>
                             </div>
                         </form>

@@ -123,7 +123,7 @@ export default class Login extends Component {
 									<button
 										type="button"
 										onClick={this.clickLog}
-										className="btn btn-success m-3"
+										className="btn btn-warning m-3"
 									>
 										{' '}
 										Log In{' '}

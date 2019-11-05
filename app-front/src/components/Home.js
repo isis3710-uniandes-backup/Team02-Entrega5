@@ -83,7 +83,7 @@ class Home extends Component {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-						<div className="navbar-nav">
+						<div className="navbar navbar-inverse">
 							<button
 								className="nav-item nav-link navbutton botones"
 								onClick={this.changeHome}
