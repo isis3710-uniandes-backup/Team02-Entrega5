@@ -31,12 +31,19 @@ export default class GastosList extends Component {
 	render() {
 		return (
 			<div className="container-fluid ">
+				<div className="row">
+					<div className="col-12 text-center title">
+						<h1>Your history of expenses</h1>
+					</div>
+
+				</div>
+				<br></br>
 				<div className="row justify-content-center">
 					{this.state.load ? (
 						this.state.data.map((g, i) => <Gasto data={g} key={i} />)
 					) : (
-						<p>No data</p>
-					)}
+							<h3>No data</h3>
+						)}
 				</div>
 			</div>
 		);
