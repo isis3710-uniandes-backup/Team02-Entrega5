@@ -40,9 +40,6 @@ class Home extends Component {
 	};
 
 	render() {
-		let x = (
-			<Board username={this.state.username} password={this.state.password} />
-		);
 		return (
 			<div>
 				<nav className="navbar fixed-top navbar-expand-lg navbar-dark navconfig">
