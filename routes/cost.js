@@ -7,8 +7,8 @@ var router = express.Router();
 
 router.post('/addcost', middleware.checkToken, operations.addCost);
 router.get('/getallcost', middleware.checkToken, operations.getAllCost);
-router.get('/getcostcategory', middleware.checkToken, operations.getAllCostCategory);
-router.get('/getcosttime', middleware.checkToken, operations.getCostTime);
-router.get('/getcosttimecategory', middleware.checkToken, operations.getCostTimeCategory);
+router.post('/getcostcategory', middleware.checkToken, operations.getAllCostCategory);
+router.post('/getcosttime', middleware.checkToken, operations.getCostTime);
+router.post('/getcosttimecategory', middleware.checkToken, operations.getCostTimeCategory);
 
 module.exports = router;
