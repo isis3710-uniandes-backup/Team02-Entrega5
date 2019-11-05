@@ -73,8 +73,8 @@ export default class Login extends Component {
 							<div className="container-fluid justify-content-center">
 								<h1 className="text-center mb4">Security</h1>
 								<img
-									src="https://housing.umn.edu/sites/housing.umn.edu/files/security_monitor_icon.png"
-									alt="logo"
+									src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png"
+									alt="billetera"
 									className="rounded mx-auto d-block img-fluid"
 									height="350px"
 									width="350px"
