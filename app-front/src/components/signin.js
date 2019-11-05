@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ToastsContainer, ToastsStore } from 'react-toasts';
 import { data } from "../params";
 import history from "../history";
 import '../css/signin.css'
@@ -27,19 +28,19 @@ export default class SignIn extends Component {
     }
 
     if (empty.length !== 0) {
-      return alert(empty);
+      return ToastsStore.error(empty);
     }
 
     try {
       let message = await axios.post(data.addUser, this.state); //Toma los datos del estado.
-      alert(message.data);
+      alert('Usuario creado exitosamente');
       history.replace("/login"); //Avanzar de vista.
     }
     catch (err) {
       if (err.request.status === 400) {
-        alert(err.response.data.message);
+        ToastsStore.error(err.response.data.message);
       }
-      else { alert(err); }
+      else { ToastsStore.err(err); }
     }
   };
 
@@ -95,7 +96,7 @@ export default class SignIn extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Email</label>
+                  <label id="email-label">Email</label>
                   <input
                     type="email"
                     name="uemail"
@@ -103,12 +104,13 @@ export default class SignIn extends Component {
                     id="userEmail"
                     placeholder="Enter your email"
                     label="Password Field"
+                    aria-labelledby="email-label"
                     onChange={evt => this.setState({ email: evt.target.value })}
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label>Password</label>
+                  <label id="password-label">Password</label>
                   <input
                     type="password"
                     name="uPass"
@@ -116,6 +118,7 @@ export default class SignIn extends Component {
                     id="userPass"
                     placeholder="User's account password"
                     label="Password Field"
+                    aria-labelledby="password-label"
                     onChange={evt => this.setState({ password: evt.target.value })}
                     required
                   />
@@ -131,7 +134,7 @@ export default class SignIn extends Component {
                   <button
                     type="button"
                     onClick={this.clickSignIn}
-                    className="btn btn-primary m-3 mylabel"
+                    className="btn btn-warning m-3 mylabel"
                   >
                     Submit
                   </button>
@@ -140,6 +143,7 @@ export default class SignIn extends Component {
             </div>
           </div>
         </div>
+        <ToastsContainer store={ToastsStore} />
       </div>
     );
   }
