@@ -71,11 +71,6 @@ class Home extends Component {
 			<div>
 				<link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
 				<nav className="navbar fixed-top navbar-expand-lg navbar-dark navconfig">
-					<a href="#home" className="navbar-left"><img src="http://www.freepngclipart.com/download/handbag/78586-handbag-wallet-computer-cash-icons-png-download-free.png" alt="wallet"
-									className="rounded mx-auto d-block img-fluid"
-									height="50px"
-									width="50px"
-									style={{marginRight: 1,}}></img></a>
 					<a href="#home" className="navbar-brand title text-white">OnlineWallet</a>
 					<button
 						className="navbar-toggler"

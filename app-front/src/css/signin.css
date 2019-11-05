@@ -1,11 +1,10 @@
 .centrar {
-    width:412px;
-    margin:10vh auto;
-    background-color:#f3f3f3;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    width: 412px;
+    margin: 10vh auto;
+    background-color: #f3f3f3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
-
 
 .centrar form {
     width: 100%;
@@ -22,7 +21,7 @@
     font-size: 16px;
 }
 
-.centrar > h5 {
+.centrar>h5 {
     text-align: center;
 }
 
@@ -45,41 +44,39 @@
     background-color: #dff9fb;
 }
 
-.dia{
-
+.dia {
     width: 90px;
     height: 90px;
     font-size: 40pt;
 }
-#calendario{
 
+#calendario {
     padding-left: 2cm;
     padding-top: 30px;
 }
 
-#card{
-    background-color: #dff9fb;
-}
 
-#header{
-
+#header {
     padding-bottom: 20px;
 }
 
-#login{
+#login {
     font-family: 'Rubik', sans-serif;
 }
 
-#security{
+#security {
     font-family: 'Rubik', sans-serif;
 }
-#bienv{
+
+#bienv {
     font-family: 'Rubik', sans-serif;
 }
-#exp{
+
+#exp {
     font-family: 'Rubik', sans-serif;
 }
-.mylabel{
+
+.mylabel {
     font-family: 'Karla', sans-serif;
 }
 
@@ -87,16 +84,18 @@
     font-family: 'Rubik', sans-serif;
 }
 
-#filter{
+#filter {
     font-family: 'Rubik', sans-serif;
 }
-#uname{
-    font-family: 'Karla', sans-serif;
-}
-#password{
-    font-family: 'Karla', sans-serif;
-}
-#prueba{
+
+#uname {
     font-family: 'Karla', sans-serif;
 }
 
+#password {
+    font-family: 'Karla', sans-serif;
+}
+
+#prueba {
+    font-family: 'Karla', sans-serif;
+}

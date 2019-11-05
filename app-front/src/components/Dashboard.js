@@ -78,7 +78,7 @@ class Dashboard extends Component {
                 <link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet"></link>
                 <div className="row">
                     <div className="col-9">
-                        <div className="card shadow chart-card">
+                        <div className="card shadow bg-light">
                             <div className="card-header text-center">
                                 <h1 id = "bienv">Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
                             </div>
