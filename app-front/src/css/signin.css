@@ -86,13 +86,11 @@
 .button-blue {
     background-color: #0071EB;
     color: #ffffff;
-    border-radius: 25px;
 }
 
 .button-blue:hover {
     background-color: #0060C7;
     color: #ffffff;
-    border-radius: 25px;
 }
 
 .button-rounded {

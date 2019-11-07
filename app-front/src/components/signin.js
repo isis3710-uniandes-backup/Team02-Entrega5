@@ -127,14 +127,14 @@ export default class SignIn extends Component {
                   <button
                     type="button"
                     onClick={this.clickCancel}
-                    className="btn btn-secondary m-3 mylabel"
+                    className="btn button-rounded btn-secondary m-3 mylabel"
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
                     onClick={this.clickSignIn}
-                    className="btn button-blue m-3 mylabel"
+                    className="btn button-rounded button-blue m-3 mylabel"
                   >
                     Submit
                   </button>
