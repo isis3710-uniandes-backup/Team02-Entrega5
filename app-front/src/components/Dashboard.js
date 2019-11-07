@@ -125,10 +125,10 @@ class Dashboard extends Component {
                                 <hr></hr>
                                 <div className="row text-center">
                                     <div className="col-6">
-                                        <button className="btn btn-danger btn-sm mylabel" onClick={this.clickClearFilter}>Clear</button>
+                                        <button className="btn button-rounded btn-danger btn-sm mylabel" onClick={this.clickClearFilter}>Clear</button>
                                     </div>
                                     <div className="col-6">
-                                        <button type="submit" value="Submit" className="btn btn-warning btn-sm mylabel" onClick={this.clickFilter}>Filter</button>
+                                        <button type="submit" value="Submit" className="btn button-rounded button-blue btn-sm mylabel" onClick={this.clickFilter}>Filter</button>
                                     </div>
 
                                 </div>

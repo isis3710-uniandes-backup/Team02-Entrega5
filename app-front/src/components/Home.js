@@ -113,7 +113,7 @@ class Home extends Component {
 						</div>
 					</div>
 					<div>
-						<button className="btn btn-danger mylabel" onClick={this.logOut} >
+						<button className="btn button-rounded btn-danger mylabel" onClick={this.logOut} >
 							Log Out
 						</button>
 					</div>

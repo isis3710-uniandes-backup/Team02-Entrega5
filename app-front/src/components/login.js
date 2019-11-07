@@ -120,14 +120,14 @@ export default class Login extends Component {
 									<button
 										type="button"
 										onClick={this.clickSignIn}
-										className="btn btn-secondary m-3 mylabel"
+										className="btn button-rounded btn-secondary m-3 mylabel"
 									>
 										Register
 									</button>
 									<button
 										type="button"
 										onClick={this.clickLog}
-										className="btn btn-warning m-3 mylabel"
+										className="btn button-rounded button-blue m-3 mylabel"
 									>
 										{' '}
 										Log In{' '}

@@ -67,7 +67,6 @@
 #security {
     font-family: 'Rubik', sans-serif;
 }
-
 #bienv {
     font-family: 'Rubik', sans-serif;
 }
@@ -83,6 +82,22 @@
 .title {
     font-family: 'Rubik', sans-serif;
 }
+
+.button-blue {
+    background-color: #0071EB;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.button-blue:hover {
+    background-color: #0060C7;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.button-rounded {
+    border-radius: 25px;
+} 
 
 #filter {
     font-family: 'Rubik', sans-serif;

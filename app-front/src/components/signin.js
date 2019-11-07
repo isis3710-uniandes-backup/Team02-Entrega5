@@ -134,7 +134,7 @@ export default class SignIn extends Component {
                   <button
                     type="button"
                     onClick={this.clickSignIn}
-                    className="btn btn-warning m-3 mylabel"
+                    className="btn button-blue m-3 mylabel"
                   >
                     Submit
                   </button>
