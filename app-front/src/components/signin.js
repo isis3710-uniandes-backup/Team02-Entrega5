@@ -32,7 +32,7 @@ export default class SignIn extends Component {
     }
 
     try {
-      let message = await axios.post(data.addUser, this.state); //Toma los datos del estado.
+      await axios.post(data.addUser, this.state); //Toma los datos del estado.
       alert('Usuario creado exitosamente');
       history.replace("/login"); //Avanzar de vista.
     }
