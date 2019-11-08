@@ -15,3 +15,7 @@ https://youtu.be/l6cBdhRtNAg
 
 ## Anotacion IMPORTANTE!
 En clase revisamos los issues de contraste detectados por Axe. Estos no tienen sentido. El profesor indicó que se debe tener en cuenta para la calificación. 
+
+## Servidor de despliegue
+El aplicativo se encuentra desplegado en: http://13.92.226.76/. En esta direccion se encuentra el frontend
+Si desea realizar peticiones al backend para realizar la verificacion de seguridad este se encuentra en: http://13.92.226.76:3001/
