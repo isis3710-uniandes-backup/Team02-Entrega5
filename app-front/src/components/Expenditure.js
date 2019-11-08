@@ -92,10 +92,10 @@ class Expenditure extends Component {
                             <hr></hr>
                             <div className="row justify-content-center">
                                 <div className="col-6 text-center">
-                                    <button type="button" className="btn btn-danger mylabel" onClick={this.clickCancel} data-dismiss="modal">Cancel</button>
+                                    <button type="button" className="btn button-rounded btn-danger mylabel" onClick={this.clickCancel} data-dismiss="modal">Cancel</button>
                                 </div>
                                 <div className="col-6 text-center">
-                                    <button type="submit" value="Submit" className="btn btn-warning mylabel">Submit</button>
+                                    <button type="submit" value="Submit" className="btn button-rounded button-blue mylabel">Submit</button>
                                 </div>
                             </div>
                         </form>

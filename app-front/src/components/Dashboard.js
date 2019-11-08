@@ -72,6 +72,34 @@ class Dashboard extends Component {
         }
     }
 
+    checkTitle() {
+        if (this.props.data.length > 1) {
+            return <Chart
+            width={'800px'}
+            height={'600px'}
+            chartType="PieChart"
+            loader={<div>Loading Chart...</div>}
+            data={this.checkData()}
+            options={{
+                title: 'Your expenses',
+                // Just add this option
+                is3D: true,
+                backgroundColor: { fill: 'transparent' },
+                chartArea: { 'width': '95%', 'height': '85%' },
+                titleTextStyle: {
+                    fontName: 'Rubik',
+                    fontSize: 30, // 12, 18 whatever you want (don't specify px)
+                    bold: true,    // true or false
+
+                },
+            }}
+            rootProps={{ 'data-testid': '1' }}
+        />
+        }else {
+            return <h3>You haven't entered any data yet.</h3>
+        }
+    }
+
     render() {
         return (
             <div className="container-float">
@@ -85,27 +113,7 @@ class Dashboard extends Component {
                             <div className="card-body" id="card">
                                 <div className="row justify-content-center">
                                     <div className="col-12">
-                                        <Chart
-                                            width={'800px'}
-                                            height={'600px'}
-                                            chartType="PieChart"
-                                            loader={<div>Loading Chart...</div>}
-                                            data={this.checkData()}
-                                            options={{
-                                                title: 'Your expenses',
-                                                // Just add this option
-                                                is3D: true,
-                                                backgroundColor: { fill: 'transparent' },
-                                                chartArea: { 'width': '95%', 'height': '85%' },
-                                                titleTextStyle: {
-                                                    fontName: 'Rubik',
-                                                    fontSize: 30, // 12, 18 whatever you want (don't specify px)
-                                                    bold: true,    // true or false
-
-                                                },
-                                            }}
-                                            rootProps={{ 'data-testid': '1' }}
-                                        />
+                                        {this.checkTitle()}
                                     </div>
                                 </div>
 
@@ -125,10 +133,10 @@ class Dashboard extends Component {
                                 <hr></hr>
                                 <div className="row text-center">
                                     <div className="col-6">
-                                        <button className="btn btn-danger btn-sm mylabel" onClick={this.clickClearFilter}>Clear</button>
+                                        <button className="btn button-rounded btn-danger btn-sm mylabel" onClick={this.clickClearFilter}>Clear</button>
                                     </div>
                                     <div className="col-6">
-                                        <button type="submit" value="Submit" className="btn btn-warning btn-sm mylabel" onClick={this.clickFilter}>Filter</button>
+                                        <button type="submit" value="Submit" className="btn button-rounded button-blue btn-sm mylabel" onClick={this.clickFilter}>Filter</button>
                                     </div>
 
                                 </div>
