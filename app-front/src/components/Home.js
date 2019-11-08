@@ -12,17 +12,12 @@ class Home extends Component {
 	componentDidMount() {
 		if (this.props.location.state === undefined) {
 			history.replace('/notAuth');
-		} else {
-			this.setState({
-				username: this.props.location.state.username,
-				password: this.props.location.state.password
-			});
 		}
 	}
 
 	state = {
-		username: '',
-		password: '',
+		username: this.props.location.state.username,
+		password: this.props.location.state.username,
 		board: 'board',
 		fechaIni: '',
 		fechaFin: '',
