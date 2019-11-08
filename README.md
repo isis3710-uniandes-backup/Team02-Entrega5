@@ -1,4 +1,4 @@
-# Online Wallet
+# Online Wallet :dollar: :calendar: :bar_chart:
 
 OnlineWallet es una aplicación Web que te permite llevar un registro de los gastos que realizas diariamente. Al agregar tus diferentes tipos de gastos, podrás ver gráficamente información consolidada sobre los mismos. De igual manera podrás filtrar la información por categorias, y ver los gastos que has realizado en un día en específico. Por otro lado, OnlineWallet también te permite visualizar el historial de tus gastos. Para utilizar OnlineWallet es necesario que en primera instancia te registres en nuestra base de datos.
 
