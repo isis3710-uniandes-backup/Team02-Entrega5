@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Chart } from "react-google-charts";
+import { FormattedMessage } from 'react-intl';
 import '../css/signin.css';
 
 
@@ -74,29 +75,34 @@ class Dashboard extends Component {
 
     checkTitle() {
         if (this.props.data.length > 1) {
-            return <Chart
-            width={'800px'}
-            height={'600px'}
-            chartType="PieChart"
-            loader={<div>Loading Chart...</div>}
-            data={this.checkData()}
-            options={{
-                title: 'Your expenses',
-                // Just add this option
-                is3D: true,
-                backgroundColor: { fill: 'transparent' },
-                chartArea: { 'width': '95%', 'height': '85%' },
-                titleTextStyle: {
-                    fontName: 'Rubik',
-                    fontSize: 30, // 12, 18 whatever you want (don't specify px)
-                    bold: true,    // true or false
+            return (
+            <FormattedMessage id="dashboard.expenses">{
+                title =>
+                <Chart
+                width={'800px'}
+                height={'600px'}
+                chartType="PieChart"
+                loader={<div>Loading Chart...</div>}
+                data={this.checkData()}
+                options={{
+                    title: {title},
+                    // Just add this option
+                    is3D: true,
+                    backgroundColor: { fill: 'transparent' },
+                    chartArea: { 'width': '95%', 'height': '85%' },
+                    titleTextStyle: {
+                        fontName: 'Rubik',
+                        fontSize: 30, // 12, 18 whatever you want (don't specify px)
+                        bold: true,    // true or false
 
-                },
-            }}
-            rootProps={{ 'data-testid': '1' }}
-        />
+                    },
+                }}
+                rootProps={{ 'data-testid': '1' }}
+            />}
+        </FormattedMessage>
+        );
         }else {
-            return <h3>You haven't entered any data yet.</h3>
+            return <h3><FormattedMessage id="dashboard.noData"/></h3>
         }
     }
 
@@ -108,7 +114,7 @@ class Dashboard extends Component {
                     <div className="col-9">
                         <div className="card shadow bg-light">
                             <div className="card-header text-center">
-                                <h1 id = "bienv">Welcome back {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
+                                <h1 id = "bienv"><FormattedMessage id="dashboard.welcome"/> {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!</h1>
                             </div>
                             <div className="card-body" id="card">
                                 <div className="row justify-content-center">
@@ -123,7 +129,7 @@ class Dashboard extends Component {
                     <div className="col-3">
                         <div className="cards shadow bg-light">
                             <div className="card-header">
-                                <h2 id = "filter">Filter</h2>
+                                <h2 id = "filter"><FormattedMessage id="dashboard.filter"/></h2>
                             </div>
                             <div className="card-body">
                                 {this.props.data.filter(element => element[0] !== "Expenditure").map(
@@ -133,10 +139,10 @@ class Dashboard extends Component {
                                 <hr></hr>
                                 <div className="row text-center">
                                     <div className="col-6">
-                                        <button className="btn button-rounded btn-danger btn-sm mylabel" onClick={this.clickClearFilter}>Clear</button>
+                                        <button className="btn button-rounded btn-danger btn-sm mylabel" onClick={this.clickClearFilter}><FormattedMessage id="dashboard.clear"/></button>
                                     </div>
                                     <div className="col-6">
-                                        <button type="submit" value="Submit" className="btn button-rounded button-blue btn-sm mylabel" onClick={this.clickFilter}>Filter</button>
+                                        <button type="submit" value="Submit" className="btn button-rounded button-blue btn-sm mylabel" onClick={this.clickFilter}><FormattedMessage id="dashboard.filter"/></button>
                                     </div>
 
                                 </div>

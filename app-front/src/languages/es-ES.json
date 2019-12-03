@@ -25,5 +25,10 @@
     "expenditure.description": "Descripción",
     "expenditure.date": "Fecha",
     "expenditure.amount": "Valor",
-    "expenditure.descriptionPlaceholder": "Viveres semanales"        
+    "expenditure.descriptionPlaceholder": "Viveres semanales",
+    "dashboard.welcome": "Bienvenido de vuelta",
+    "dashboard.expenses": "Sus Gastos",
+    "dashboard.noData": "Aún no hay gastos registrados",
+    "dashboard.filter": "Filtrar",
+    "dashboard.clear": "Limpiar"
 }
