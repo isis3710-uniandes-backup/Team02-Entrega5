@@ -1,0 +1,11 @@
+{
+    "login": "Iniciar Sesión",
+    "username": "Nombre de usuario",
+    "usernamePlaceholder": "Ingrese su nombre de usuario",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "register": "Registrarse",
+    "loginCredentials": "Ni el usuario ni la contraseña coinciden con algún usuario registrado, por favor verifique las credenciales",
+    "loginSucess": "Autenticación Exitosa",
+    "loginNotFound": "Usuario no encontrado"
+}

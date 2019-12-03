@@ -1,5 +1,6 @@
-import React, { Component } from 'react';import { ToastsContainer, ToastsStore } from 'react-toasts';
-
+import React, { Component } from 'react';
+import { ToastsContainer, ToastsStore } from 'react-toasts';
+import { FormattedMessage } from 'react-intl';
 import { data } from '../params';
 import history from '../history';
 import '../css/signin.css';
@@ -37,19 +38,19 @@ export default class Login extends Component {
 			//TODO Utilizar una forma mas elegante de dar una notificación.
 
 			if (this.state.username.length === 0)
-				return ToastsStore.warning('Please enter your username');
+				return ToastsStore.warning(<FormattedMessage id="usernamePlaceholder"/>);
 			if (this.state.password.length === 0)
-				return ToastsStore.warning('Please enter your password');
+				return ToastsStore.warning(<FormattedMessage id="passwordPlaceholder"/>);
 
 			//* Llamar al backend: Peticion traer los datos de inicio de sesión.
 			let res = await this.getLogData(this.state.username, this.state.password);
 			if (res === undefined || !res.success)
 				return ToastsStore.error(
-					"The email and password doesn't match with any registered user, check the credentials"
+					<FormattedMessage id="loginCredentials"/>
 				);
 			else if (res.success) {
 				//* Autenticación Exitosa
-				ToastsStore.success('Autenticación exitosa');
+				ToastsStore.success(<FormattedMessage id="loginSucess"/>);
 				localStorage.setItem('token', res.token);
 				history.replace({
 					pathname: '/home',
@@ -61,8 +62,7 @@ export default class Login extends Component {
 			}
 		} catch (err) {
 			if (err.response.status === 404) {
-				ToastsStore.error('User Not Found')
-				//alert('User Not Found');
+				ToastsStore.error(<FormattedMessage id="loginNotFound"/>)				
 			}
 		}
 	};
@@ -83,38 +83,44 @@ export default class Login extends Component {
 									height="180px"
 									width="180px"
 								/>
-								<h2 className="text-center mt-3" id="login">Login</h2>
+								<h2 className="text-center mt-3" id="login"><FormattedMessage id="login"/></h2>
 							</div>
 							<form className="container-fluid">
 								<div className="form-group">
-									<label id = "uname">Username</label>
+									<label id = "uname"><FormattedMessage id="username"/></label>
+									<FormattedMessage id="usernamePlaceholder">{
+										placeholder =>
 									<input
 										type="text"
 										name="uName"
 										className="form-control"
 										id="userName"
-										placeholder="Enter your username"
+										placeholder={placeholder}
 										aria-label="Username Field"
 										onChange={evt =>
 											this.setState({ username: evt.target.value })
 										}
 										required
-									/>
+									/>}
+									</FormattedMessage>
 								</div>
 								<div className="form-group">
-									<label id = "password">Password</label>
+									<label id = "password"><FormattedMessage id="password"/></label>
+									<FormattedMessage id="passwordPlaceholder">{
+										placeholder =>
 									<input
 										type="password"
 										name="uPass"
 										className="form-control"
 										id="userPass"
-										placeholder="User's account password"
+										placeholder={placeholder}
 										aria-label="password-field"
 										onChange={evt =>
 											this.setState({ password: evt.target.value })
 										}
 										required
-									/>
+									/>}
+									</FormattedMessage>
 								</div>
 								<div className="row justify-content-center">
 									<button
@@ -122,7 +128,7 @@ export default class Login extends Component {
 										onClick={this.clickSignIn}
 										className="btn button-rounded btn-secondary m-3 mylabel"
 									>
-										Register
+										<FormattedMessage id="register"/>
 									</button>
 									<button
 										type="button"
@@ -130,7 +136,7 @@ export default class Login extends Component {
 										className="btn button-rounded button-blue m-3 mylabel"
 									>
 										{' '}
-										Log In{' '}
+										<FormattedMessage id="login"/>{' '}
 									</button>
 								</div>
 							</form>
