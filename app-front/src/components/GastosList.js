@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { FormattedMessage } from 'react-intl';
 import { data } from '../params';
 import Gasto from './Gasto';
 const axios = require('axios');
@@ -33,7 +33,7 @@ export default class GastosList extends Component {
 			<div className="container-fluid ">
 				<div className="row">
 					<div className="col-12 text-center title">
-						<h1>Your history of expenses</h1>
+						<h1><FormattedMessage id="history.name"/></h1>
 					</div>
 
 				</div>
@@ -42,7 +42,7 @@ export default class GastosList extends Component {
 					{this.state.load ? (
 						this.state.data.map((g, i) => <Gasto data={g} key={i} />)
 					) : (
-							<h3>No data</h3>
+							<h3><FormattedMessage id="history.noData"/></h3>
 						)}
 				</div>
 			</div>

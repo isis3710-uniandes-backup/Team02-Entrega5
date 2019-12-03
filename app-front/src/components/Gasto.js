@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedDate, FormattedNumber, FormattedMessage } from "react-intl";
 
 export default class Gasto extends Component {
 	componentDidMount() {
@@ -58,15 +59,27 @@ export default class Gasto extends Component {
 				</div>
 				<br></br>
 				<ul className="list-group mylabel">
-					<li className="list-group-item list-group-item"><i className="fas fa-marker"></i><strong> Category:</strong> {this.props.data.category} </li>
-					<li className="list-group-item list-group-item"><i className="fas fa-calendar"></i><strong>    Date:</strong> {this.props.data.date.split('T')[0]} </li>
-					<li className="list-group-item list-group-item"><i className="fas fa-money-bill"></i> <strong> Amount:</strong> ${this.props.data.amount} </li>
-					<li className="list-group-item list-group-item"><i className="fas fa-align-left"></i> <strong>   Description:</strong> {this.props.data.description} </li>
-
+					<li className="list-group-item list-group-item"><i className="fas fa-marker"></i><strong><FormattedMessage id="cost.category"/></strong> {this.props.data.category} </li>
+					<li className="list-group-item list-group-item">
+						<i className="fas fa-calendar"></i>
+						<strong><FormattedMessage id="expenditure.date"/>  </strong>
+						<FormattedDate
+            				value={new Date(this.props.data.date.split('T')[0])}
+            				year="numeric"
+							month="long"
+							day="numeric"
+							weekday="long"
+          				/>						 
+					</li>
+					<li className="list-group-item list-group-item">
+						<i className="fas fa-money-bill"></i> 
+						<strong><FormattedMessage id="expenditure.amount"/>  </strong>
+						<FormattedNumber 
+							value={this.props.data.amount}
+						/> 						
+					</li>
+					<li className="list-group-item list-group-item"><i className="fas fa-align-left"></i> <strong><FormattedMessage id="expenditure.description"/></strong> {this.props.data.description} </li>
 				</ul>
-
-
-
 			</div>
 		);
 	}

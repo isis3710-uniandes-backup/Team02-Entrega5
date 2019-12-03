@@ -4,8 +4,6 @@ import '../css/signin.css';
 
 class Dia extends Component {
 
-
-
     state = {
         username: this.props.username,
         password: this.props.password,

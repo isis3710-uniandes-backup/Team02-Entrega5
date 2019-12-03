@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dia from "./Dia.js";
+import { FormattedMessage } from 'react-intl';
 import '../css/signin.css'
 
 class Calendario extends Component {
@@ -57,7 +58,7 @@ class Calendario extends Component {
             <div className="container-fluid" id="calendario">
                 <div className="card shadow bg-light">
                     <div className="card-header text-center">
-                    <h1 className="title"> Your calendar </h1>
+                    <h1 className="title"><FormattedMessage id="calendar.name"/></h1>
                     </div>
                     <div className="card-body">
                         <br></br>
@@ -79,8 +80,8 @@ class Calendario extends Component {
                             <div className="col ">
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Mes
-  </button>
+                                        <FormattedMessage id="calendar.month"/>
+                                    </button>
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                                         <button className="dropdown-item" type="button" onClick={() => { this.cambiarMes(1, "Enero") }}>Enero</button>
                                         <button className="dropdown-item" type="button" onClick={() => { this.cambiarMes(2, "Febrero") }}>Febrero</button>
