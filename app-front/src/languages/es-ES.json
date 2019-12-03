@@ -19,5 +19,11 @@
     "home.calendar": "Calendario",
     "home.history": "Historial de gastos",
     "home.myaccount": "Mi cuenta",
-    "home.logout": "Cerrar Sesión"
+    "home.logout": "Cerrar Sesión",
+    "expenditure.add": "Agregar Gasto",
+    "expenditure.categories": "Categorias",
+    "expenditure.description": "Descripción",
+    "expenditure.date": "Fecha",
+    "expenditure.amount": "Valor",
+    "expenditure.descriptionPlaceholder": "Viveres semanales"        
 }
