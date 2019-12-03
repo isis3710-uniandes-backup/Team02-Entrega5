@@ -12,6 +12,11 @@ import NotAuth from './components/notAuth';
 import {IntlProvider} from 'react-intl';
 import Spanish from './languages/es-ES';
 import English from './languages/en';
+import German from './languages/de';
+import French from './languages/fr';
+import Italian from './languages/it';
+import Portugese from './languages/pt';
+import Russian from './languages/ru';
 
 export const makeRoutes = () => {
 	let language = navigator.language;
@@ -23,6 +28,21 @@ export const makeRoutes = () => {
 			break;
 		case 'en':
 			tags = English;
+			break;
+		case 'de':
+			tags = German;
+			break;
+		case 'fr':
+			tags = French;
+			break;
+		case 'it':
+			tags = Italian;
+			break;
+		case 'pt':
+			tags = Portugese;
+			break;
+		case 'ru':
+			tags = Russian;
 			break;
 		default:
 			tags = English;
