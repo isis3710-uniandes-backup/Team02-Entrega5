@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ToastsContainer, ToastsStore } from 'react-toasts';
 import { data } from "../params";
 import history from "../history";
+import { FormattedMessage } from 'react-intl';
 import '../css/signin.css'
 const axios = require("axios");
 
@@ -33,7 +34,7 @@ export default class SignIn extends Component {
 
     try {
       await axios.post(data.addUser, this.state); //Toma los datos del estado.
-      alert('Usuario creado exitosamente');
+      ToastsStore.success(<FormattedMessage id="registerSuccess"/>);
       history.replace("/login"); //Avanzar de vista.
     }
     catch (err) {
@@ -66,62 +67,74 @@ export default class SignIn extends Component {
                   height="180px"
                   width="180px"
                 />
-                <h2 className="text-center mt-3">Register</h2>
+                <h2 className="text-center mt-3"><FormattedMessage id="register"/></h2>
               </div>
               <form className="container-fluid" noValidate>
                 <div className="form-group">
-                  <label>Full Name</label>
+                  <label><FormattedMessage id="fullname"/></label>
+                  <FormattedMessage id="fullnamePlaceholder">{
+                    placeholder =>
                   <input
                     type="text"
                     name="fName"
                     className="form-control"
                     id="fName"
-                    placeholder="Enter your fullname"
+                    placeholder={placeholder}
                     aria-label="User's fullname"
                     onChange={evt => this.setState({ fullname: evt.target.value })}
                     required
-                  />
+                  />}
+                  </FormattedMessage>
                 </div>
                 <div className="form-group">
-                  <label>Username</label>
+                  <label><FormattedMessage id="username"/></label>
+                  <FormattedMessage id="usernamePlaceholder">{
+                    placeholder =>
                   <input
                     type="text"
                     name="uName"
                     className="form-control"
                     id="userName"
-                    placeholder="Enter your username"
+                    placeholder={placeholder}
                     aria-label="Username Field"
                     onChange={evt => this.setState({ username: evt.target.value })}
                     required
-                  />
+                  />}
+                  </FormattedMessage>
                 </div>
                 <div className="form-group">
-                  <label id="email-label">Email</label>
+                  <label id="email-label"><FormattedMessage id="email"/></label>
+                  <FormattedMessage id="emailPlaceholder">{
+                    placeholder =>
                   <input
                     type="email"
                     name="uemail"
                     className="form-control"
                     id="userEmail"
-                    placeholder="Enter your email"
+                    placeholder={placeholder}
                     label="Password Field"
                     aria-labelledby="email-label"
                     onChange={evt => this.setState({ email: evt.target.value })}
                     required
-                  />
+                  />}
+                  </FormattedMessage>
                 </div>
                 <div className="form-group">
-                  <label id="password-label">Password</label>
+                  <label id="password-label"><FormattedMessage id="password"/></label>
+                  <FormattedMessage id="passwordPlaceholder">{
+                    placeholder =>
                   <input
                     type="password"
                     name="uPass"
                     className="form-control"
                     id="userPass"
-                    placeholder="User's account password"
+                    placeholder={placeholder}
                     label="Password Field"
                     aria-labelledby="password-label"
                     onChange={evt => this.setState({ password: evt.target.value })}
                     required
-                  />
+                  />}
+                  </FormattedMessage>
                 </div>
                 <div className="row justify-content-center">
                   <button
@@ -129,14 +142,14 @@ export default class SignIn extends Component {
                     onClick={this.clickCancel}
                     className="btn button-rounded btn-secondary m-3 mylabel"
                   >
-                    Cancel
+                    <FormattedMessage id="cancel"/>
                   </button>
                   <button
                     type="button"
                     onClick={this.clickSignIn}
                     className="btn button-rounded button-blue m-3 mylabel"
                   >
-                    Submit
+                    <FormattedMessage id="submit"/>
                   </button>
                 </div>
               </form>

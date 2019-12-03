@@ -7,5 +7,12 @@
     "register": "Registrarse",
     "loginCredentials": "Ni el usuario ni la contraseña coinciden con algún usuario registrado, por favor verifique las credenciales",
     "loginSucess": "Autenticación Exitosa",
-    "loginNotFound": "Usuario no encontrado"
+    "loginNotFound": "Usuario no encontrado",
+    "fullname": "Nombres y Apellidos",
+    "fullnamePlaceholder": "Ingrese sus nombres y apellidos",
+    "email":"Correo Electronico",
+    "emailPlaceholder": "Ingrese su correo electronico",
+    "cancel": "Cancelar",
+    "submit": "Registrar",
+    "registerSuccess": "Usuario registrado satisfactoriamente"
 }
