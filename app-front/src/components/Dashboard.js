@@ -75,9 +75,7 @@ class Dashboard extends Component {
 
     checkTitle() {
         if (this.props.data.length > 1) {
-            return (
-            <FormattedMessage id="dashboard.expenses">{
-                title =>
+            return (             
                 <Chart
                 width={'800px'}
                 height={'600px'}
@@ -85,7 +83,7 @@ class Dashboard extends Component {
                 loader={<div>Loading Chart...</div>}
                 data={this.checkData()}
                 options={{
-                    title: {title},
+                    title: " ",
                     // Just add this option
                     is3D: true,
                     backgroundColor: { fill: 'transparent' },
@@ -98,8 +96,7 @@ class Dashboard extends Component {
                     },
                 }}
                 rootProps={{ 'data-testid': '1' }}
-            />}
-        </FormattedMessage>
+                />
         );
         }else {
             return <h3><FormattedMessage id="dashboard.noData"/></h3>
