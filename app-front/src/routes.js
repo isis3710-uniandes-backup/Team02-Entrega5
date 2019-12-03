@@ -19,7 +19,7 @@ import Portugese from './languages/pt';
 import Russian from './languages/ru';
 
 export const makeRoutes = () => {
-	let language = navigator.language;
+	let language = navigator.language;	
 	let tags; //Archivo JSON con los tags
 	
 	switch (language) {
