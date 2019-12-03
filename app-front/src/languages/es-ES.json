@@ -34,5 +34,6 @@
     "calendar.month": "Mes",
     "history.name": "Historial de Gastos",
     "history.noData": "No hay gastos registrados",
-    "cost.category": "Categoria"
+    "cost.category": "Categoria",
+    "userprofile.name": "Mi perfil"
 }

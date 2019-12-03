@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from "react-intl";
 
 export default class UserProfile extends Component {
 	render() {
@@ -9,7 +10,7 @@ export default class UserProfile extends Component {
 					<div data-aos="flip-left" data-aos-duration="1000">
 						<div id="card-login" className="col-4 centrar card p-3 mb-5 shadow">
 							<div className="container-fluid justify-content-center">
-								<h1 className="text-center mb4">My profile</h1>
+								<h1 className="text-center mb4"><FormattedMessage id="userprofile.name"/></h1>
 								<img
 									src="https://icon-library.net/images/icon-profile/icon-profile-22.jpg"
 									alt="logo"
