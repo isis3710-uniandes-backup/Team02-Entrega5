@@ -14,5 +14,10 @@
     "emailPlaceholder": "Ingrese su correo electronico",
     "cancel": "Cancelar",
     "submit": "Registrar",
-    "registerSuccess": "Usuario registrado satisfactoriamente"
+    "registerSuccess": "Usuario registrado satisfactoriamente",
+    "home.home": "Inicio",
+    "home.calendar": "Calendario",
+    "home.history": "Historial de gastos",
+    "home.myaccount": "Mi cuenta",
+    "home.logout": "Cerrar Sesión"
 }

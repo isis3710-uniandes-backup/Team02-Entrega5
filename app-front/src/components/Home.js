@@ -5,6 +5,7 @@ import UserProfile from './userProfile';
 import Calendario from './Calendario.js';
 import DailyDashboard from './DailyDashboard';
 import GastosList from './GastosList';
+import { FormattedMessage } from 'react-intl';
 import '../css/signin.css';
 
 
@@ -85,31 +86,31 @@ class Home extends Component {
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHome}
 							>
-								<i className="fas fa-home"></i> Home <span className="sr-only">(current)</span>
+								<i className="fas fa-home"></i><FormattedMessage id="home.home"/><span className="sr-only">(current)</span>
 							</button>
 							<button
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeCalendario}
 							>
-								<i className="fas fa-calendar"></i> Calendar
+								<i className="fas fa-calendar"></i> <FormattedMessage id="home.calendar"/>
 								</button>
 							<button
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeHistorial}
 							>
-								<i className="fas fa-clock"></i> History
+								<i className="fas fa-clock"></i> <FormattedMessage id="home.history"/>
 							</button>
 							<button
 								className="nav-item nav-link navbutton botones mylabel"
 								onClick={this.changeCuenta}
 							>
-								<i className="fas fa-user-alt"></i> MyAccount
+								<i className="fas fa-user-alt"></i> <FormattedMessage id="home.myaccount"/>
 							</button>
 						</div>
 					</div>
 					<div>
 						<button className="btn button-rounded btn-danger mylabel" onClick={this.logOut} >
-							Log Out
+							<FormattedMessage id="home.logout"/>
 						</button>
 					</div>
 				</nav>
