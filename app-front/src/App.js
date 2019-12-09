@@ -4,7 +4,7 @@ import history from './history';
 export default class App extends Component {
 	constructor() {
 		super();
-		history.replace('/login');
+		//history.replace('/login');
 	}
 
 	render() {

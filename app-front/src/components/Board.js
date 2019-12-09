@@ -20,6 +20,14 @@ class Board extends Component {
     }
 
     getChartData = () => {
+        if (!navigator.onLine) {
+            if (localStorage.getItem('chartData') === null)
+                this.setState({ chartData: [] })
+            else
+                this.setState({ chartData: JSON.parse(localStorage.getItem('chartData')) });
+        }
+
+
         axios({
             method: "GET",
             url: data.getAllCost,
@@ -39,10 +47,12 @@ class Board extends Component {
                 categoriesData[expense.category] += parseInt(expense.amount);
             }
             //console.log(categoriesData);
+            localStorage.setItem('chartData', JSON.stringify(categoriesData));
             this.setState({ chartData: categoriesData });
             //console.log(this.state.chartData);
         });
     }
+
 
     getData() {
         let data = []
@@ -66,7 +76,7 @@ class Board extends Component {
                         <Expenditure username={this.state.username} key={this.state.username} password={this.state.password} refreshData={this.getChartData} />
                     </div>
                     <div className="col-8">
-                        <Dashboard key="Dashboard" username={this.state.username} password={this.state.password} data={this.getData()}/>
+                        <Dashboard key="Dashboard" username={this.state.username} password={this.state.password} data={this.getData()} />
                     </div>
                 </div>
             </div>
