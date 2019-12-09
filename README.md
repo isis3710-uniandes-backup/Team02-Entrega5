@@ -11,7 +11,7 @@ Para poder correr la aplicación se deben realizar los siguientes pasos:
 
 ## Video explicativo
 
-https://youtu.be/l6cBdhRtNAg
+https://youtu.be/WYcPQ-cB61Q
 
 ## Anotacion IMPORTANTE!
 En clase revisamos los issues de contraste detectados por Axe. Estos no tienen sentido. El profesor indicó que se debe tener en cuenta para la calificación. 
