@@ -108,6 +108,7 @@ var color = d3
 
     // map to data
     var u = svg.selectAll("path").data(data_ready);
+    var u2= svg.selectAll("text").data(data_ready);
 
     // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
     u.enter()
@@ -129,21 +130,22 @@ var color = d3
       .style("stroke-width", "2px")
       .style("opacity", 1);
       
-     /* 
+      
      var arcGenerator = d3.arc()
   .innerRadius(0)
   .outerRadius(radius)
-     u
+     u2
       .enter()
       .append('text')
-      .merge(u)
+      .merge(u2)
       .transition()
       .text(function(d){ return data2[d.data.key]})
       .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+      .attr("font-weight",900)
       .style("text-anchor", "middle")
       .style("font-size", 17)
-
-    u.exit().remove();*/
+    u.exit().remove();
+    u2.exit().remove();
   }
 
   checkTitle() {
@@ -188,7 +190,7 @@ var color = d3
               </div>
               <div className="card-body" id="card">
                 <div className="row justify-content-center"></div>
-                <div className="col-12" id="my_dataviz">
+                <div className="row justify-content-center" id="my_dataviz">
                   {this.checkTitle()}
                 </div>
               </div>
