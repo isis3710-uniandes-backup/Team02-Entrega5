@@ -9,7 +9,7 @@ import Home from './components/Home';
 import NotAuth from './components/notAuth';
 
 //Internacionalizar.
-import {IntlProvider} from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import Spanish from './languages/es-ES';
 import English from './languages/en';
 import German from './languages/de';
@@ -19,11 +19,14 @@ import Portugese from './languages/pt';
 import Russian from './languages/ru';
 
 export const makeRoutes = () => {
-	let language = navigator.language;	
+	let language = navigator.language;
 	let tags; //Archivo JSON con los tags
-	
+
 	switch (language) {
 		case 'es-ES':
+			tags = Spanish;
+			break;
+		case 'es':
 			tags = Spanish;
 			break;
 		case 'en':
@@ -46,7 +49,7 @@ export const makeRoutes = () => {
 			break;
 		default:
 			tags = English;
-			break;			
+			break;
 	}
 
 	return (
