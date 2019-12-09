@@ -1,10 +1,10 @@
-import ReactDOM from 'react-dom';
-import { makeRoutes } from './routes';
+import ReactDOM from "react-dom";
+import { makeRoutes } from "./routes";
 
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from "./serviceWorker";
 
 const routes = makeRoutes();
 
-ReactDOM.render(routes, document.getElementById('root'));
+ReactDOM.render(routes, document.getElementById("root"));
 
-ServiceWorker.register();
+serviceWorker.register();
