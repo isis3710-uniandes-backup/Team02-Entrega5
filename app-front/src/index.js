@@ -7,4 +7,4 @@ const routes = makeRoutes();
 
 ReactDOM.render(routes, document.getElementById('root'));
 
-ServiceWorker.register();
+serviceWorker.register();
