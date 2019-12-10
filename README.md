@@ -17,8 +17,8 @@ https://youtu.be/WYcPQ-cB61Q
 En clase revisamos los issues de contraste detectados por Axe. Estos no tienen sentido. El profesor indicó que se debe tener en cuenta para la calificación. 
 
 ## Servidor de despliegue
-El aplicativo se encuentra desplegado en: http://13.92.226.76/. En esta direccion se encuentra el frontend
-Si desea realizar peticiones al backend para realizar la verificacion de seguridad este se encuentra en: http://13.92.226.76:3001/
+El aplicativo se encuentra desplegado en: http://52.146.53.125:5000/login En esta direccion se encuentra el frontend
+Si desea realizar peticiones al backend para realizar la verificacion de seguridad este se encuentra en: http://52.146.53.125:3001/
 
 ## Path principal
 El path principal de la palicación es `/login`.
